@@ -80,6 +80,8 @@ Rogue Intelligence builds **structure-first** systems: persistent state, decisio
 
 <div class="cta-row">
   <a class="btn solid" href="{{ '/valhalla/' | relative_url }}">Read Valhalla</a>
+  <a class="btn" href="{{ '/proofs/' | relative_url }}">Proofs</a>
+  <a class="btn" href="{{ '/playground/' | relative_url }}">Playground</a>
   <a class="btn" href="{{ '/about/' | relative_url }}">About the author</a>
   <a class="btn" href="mailto:licensing@rogue-intelligence.com">licensing@rogue-intelligence.com</a>
 </div>

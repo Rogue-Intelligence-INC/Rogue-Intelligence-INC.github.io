@@ -6,6 +6,9 @@ primary:
   - title: Valhalla
     url: /valhalla/
     nav: valhalla
+  - title: Proofs
+    url: /proofs/
+    nav: proofs
   - title: Cryptography
     url: /cryptography/
     nav: cryptography

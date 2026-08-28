@@ -78,6 +78,8 @@ Customer cash requires **Layer-C** re-measurement on the buyer’s traces (paid 
 
 <div class="cta-row">
   <a class="btn solid" href="mailto:licensing@rogue-intelligence.com?subject=Valhalla%20Reliability%20Audit">Request Audit</a>
+  <a class="btn" href="{{ '/proofs/' | relative_url }}">Unique Proofs</a>
+  <a class="btn" href="{{ '/playground/' | relative_url }}">Try playground</a>
   <a class="btn" href="{{ '/about/' | relative_url }}">Author &amp; financing</a>
 </div>
 

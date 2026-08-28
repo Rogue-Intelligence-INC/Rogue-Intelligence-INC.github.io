@@ -1,0 +1,109 @@
+{
+  "protocol": "unique-proof-suite-v1",
+  "product": "Valhalla",
+  "company": "Rogue Intelligence",
+  "updated": "2026-08-28",
+  "disclaimer": "Lab protocols. Customer claims require Layer-C Audit re-measurement. Not LoCoMo SOTA.",
+  "claims": {
+    "U1": {
+      "id": "U1",
+      "name": "Non-isolated multimodal body",
+      "one_liner": "One incubating body shares modality better than isolated late fusion.",
+      "baseline": "Isolated modality patches",
+      "pass_bar": "shared_patch margin ≥ +0.02 and win rate threshold",
+      "metrics": {
+        "shared_patch": 0.9999,
+        "isolated_patch": 0.968
+      },
+      "citeable": true,
+      "bound": "Not vision-LM SOTA."
+    },
+    "U2": {
+      "id": "U2",
+      "name": "Fate-gated abstain / proactive",
+      "one_liner": "Emit when on-topic; abstain when evidence mismatches.",
+      "baseline": "Forced-answer / no FOG",
+      "pass_bar": "MAR≥0.70 · FIR≤0.15 · on-topic≥0.80",
+      "metrics": {
+        "MAR": 1.0,
+        "FIR": 0.0,
+        "PPI": 0.65
+      },
+      "citeable": true,
+      "bound": "Not a guarantee of zero production incidents."
+    },
+    "U3": {
+      "id": "U3",
+      "name": "Zero-weight pollution rescue",
+      "one_liner": "Transfer from structure snapshot rescues accuracy vs polluted dump — without LM fine-tune.",
+      "baseline": "Polluted full-corpus session",
+      "pass_bar": "transfer_vs_polluted_pp ≥ +20",
+      "metrics": {
+        "polluted_acc": 0.484,
+        "transfer_acc": 0.871,
+        "delta_pp": 38.7,
+        "isolated_acc": 0.871
+      },
+      "citeable": true,
+      "bound": "Advantage is pollution rescue, not beating clean RAG/trad_lm on this slice."
+    },
+    "U4": {
+      "id": "U4",
+      "name": "Backbone-orthogonal structure path",
+      "one_liner": "Swap the LM decode head; structural state path can remain.",
+      "baseline": "Prompt-only memory drifts with backbone",
+      "pass_bar": "Verdict contains VALHALLA_BASE_INDEPENDENT",
+      "metrics": {
+        "verdict": "VALHALLA_BASE_INDEPENDENT"
+      },
+      "citeable": true,
+      "bound": "Requires agreed integration surface."
+    },
+    "U5": {
+      "id": "U5",
+      "name": "Cost at accuracy floor",
+      "one_liner": "Cheaper prefill while staying on-topic vs full RAG re-inject.",
+      "baseline": "RAG full corpus each turn",
+      "pass_bar": "on_topic≥0.80 · prefill_ratio≤0.35",
+      "metrics": {
+        "on_topic_rate": 0.9,
+        "prefill_ratio_vs_rag_full": 0.291
+      },
+      "citeable": true,
+      "bound": "Residual off-topic turns allowed under floor."
+    }
+  },
+  "scenarios": {
+    "pollution": {
+      "proof_id": "U3",
+      "title": "Pollution → recovery",
+      "steps": [
+        {"id": "persist", "label": "Persistent state", "detail": "Incubate structural session body outside the chat window."},
+        {"id": "inject", "label": "Inject false fact", "detail": "Pollute retrieval / summary with a contradictory claim."},
+        {"id": "naive", "label": "Naive path fails", "detail": "Full dump keeps driving later answers from corruption."},
+        {"id": "recover", "label": "Valhalla recovers", "detail": "Transfer / re-anchor on structure snapshot — no LM SGD."},
+        {"id": "metric", "label": "Measure Δ", "detail": "+38.7pp vs polluted session (protocol pass bar ≥ +20pp)."}
+      ]
+    },
+    "abstain": {
+      "proof_id": "U2",
+      "title": "Abstain when evidence is thin",
+      "steps": [
+        {"id": "ask", "label": "Under-specified ask", "detail": "Tool action requested without sufficient grounded evidence."},
+        {"id": "gate", "label": "Fate / FOG gate", "detail": "Algebraic emit / abstain / defer decision."},
+        {"id": "refuse", "label": "Abstain", "detail": "Refuse false action instead of inventing a tool call."},
+        {"id": "metric", "label": "Measure gates", "detail": "MAR 1.0 · FIR 0.0 on protocol slice."}
+      ]
+    },
+    "swap": {
+      "proof_id": "U4",
+      "title": "Swap backbone · state remains",
+      "steps": [
+        {"id": "body", "label": "Structure body", "detail": "Session state lives outside LM weights."},
+        {"id": "swap", "label": "Swap decode head", "detail": "Change open-weight / LM SKU."},
+        {"id": "remain", "label": "Path remains", "detail": "Native / open structure path stays usable."},
+        {"id": "metric", "label": "Verdict", "detail": "VALHALLA_BASE_INDEPENDENT"}
+      ]
+    }
+  }
+}

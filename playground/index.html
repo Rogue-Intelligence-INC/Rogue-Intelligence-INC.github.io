@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valhalla Proof Playground</title>
+  <style>
+    :root {
+      --bg: #0e1114;
+      --panel: #171b20;
+      --line: #2a323c;
+      --text: #e8ecef;
+      --muted: #8b96a3;
+      --accent: #3d9a7a;
+      --warn: #c48a3a;
+      --fail: #c45a5a;
+      --ok: #4caf82;
+      --font: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+      --mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #1a2830 0%, transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, #1a2228 0%, transparent 50%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 1.5rem 1.75rem 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      font-size: 1.55rem;
+      letter-spacing: 0.02em;
+      font-weight: 650;
+    }
+    .brand span { color: var(--accent); font-weight: 500; }
+    .tag {
+      color: var(--muted);
+      font-size: 0.92rem;
+      max-width: 36rem;
+      line-height: 1.45;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    button, select {
+      font: inherit;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      padding: 0.55rem 0.85rem;
+      cursor: pointer;
+    }
+    button.primary {
+      background: var(--accent);
+      border-color: transparent;
+      color: #06140f;
+      font-weight: 600;
+    }
+    button:disabled { opacity: 0.45; cursor: not-allowed; }
+    main {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1rem;
+      padding: 1rem 1.75rem 2rem;
+    }
+    @media (max-width: 960px) {
+      main { grid-template-columns: 1fr; }
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+    }
+    h2 {
+      margin: 0 0 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .steps { display: flex; flex-direction: column; gap: 0.55rem; }
+    .step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.65rem;
+      padding: 0.65rem 0.7rem;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .step.active {
+      border-color: var(--accent);
+      background: rgba(61, 154, 122, 0.08);
+    }
+    .step.done .idx { background: var(--ok); color: #04120c; }
+    .idx {
+      width: 1.7rem; height: 1.7rem;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      background: #243038;
+      font-size: 0.78rem;
+      font-family: var(--mono);
+    }
+    .step .label { font-weight: 600; }
+    .step .detail { color: var(--muted); font-size: 0.88rem; margin-top: 0.15rem; }
+    .viz {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 1rem;
+      height: 160px;
+      padding: 0.5rem 0.25rem 0;
+    }
+    .bar-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      height: 100%;
+      justify-content: flex-end;
+    }
+    .bar {
+      width: 100%;
+      max-width: 72px;
+      border-radius: 6px 6px 2px 2px;
+      transition: height 0.55s ease;
+      min-height: 4px;
+    }
+    .bar.polluted { background: var(--fail); }
+    .bar.transfer { background: var(--ok); }
+    .bar.isolated { background: #5a7a8c; }
+    .bar-label { font-size: 0.75rem; color: var(--muted); text-align: center; }
+    .bar-val { font-family: var(--mono); font-size: 0.85rem; }
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.55rem;
+    }
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.65rem 0.7rem;
+    }
+    .metric .k { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .metric .v { font-family: var(--mono); font-size: 1.15rem; margin-top: 0.2rem; }
+    .claim-card {
+      border-left: 3px solid var(--accent);
+      padding-left: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+    .claim-card .id { font-family: var(--mono); color: var(--accent); font-size: 0.85rem; }
+    .bound {
+      margin-top: 0.75rem;
+      padding: 0.65rem 0.75rem;
+      border-radius: 8px;
+      background: rgba(196, 138, 58, 0.1);
+      border: 1px solid rgba(196, 138, 58, 0.35);
+      color: #e0c49a;
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+    .log {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      background: #0a0c0e;
+      border-radius: 8px;
+      padding: 0.75rem;
+      max-height: 180px;
+      overflow: auto;
+      color: #b7c2cc;
+      white-space: pre-wrap;
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+    .status-pill.ok { border-color: var(--ok); color: var(--ok); }
+    .status-pill.warn { border-color: var(--warn); color: var(--warn); }
+    footer {
+      padding: 0 1.75rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+    footer a { color: var(--accent); }
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .flow .chip {
+      border: 1px solid var(--line);
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+    }
+    .flow .chip.on { border-color: var(--accent); color: var(--text); }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <div class="brand">Valhalla <span>Proof Playground</span></div>
+      <p class="tag">Visual, try-runnable demos of Unique Proofs U2–U4 (lab protocols). Not a Mem0 clone. Not LoCoMo SOTA.</p>
+    </div>
+    <div class="controls">
+      <select id="scenario" aria-label="Scenario">
+        <option value="pollution">U3 · Pollution rescue</option>
+        <option value="abstain">U2 · Abstain gate</option>
+        <option value="swap">U4 · Backbone swap</option>
+      </select>
+      <select id="mode" aria-label="Run mode">
+        <option value="replay">Canonical replay</option>
+        <option value="live">Live smoke (optional)</option>
+      </select>
+      <button class="primary" id="runBtn">Try run</button>
+      <span class="status-pill" id="apiStatus">API …</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Scenario walkthrough</h2>
+      <div class="flow" id="flow"></div>
+      <div class="steps" id="steps"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Live metrics</h2>
+      <div class="claim-card" id="claim"></div>
+      <div class="viz" id="viz"></div>
+      <div class="bound" id="bound"></div>
+      <h2 style="margin-top:1rem">Run log</h2>
+      <div class="log" id="log">Ready. Select a scenario and press Try run.</div>
+    </section>
+  </main>
+
+  <footer>
+    Rogue Intelligence · Protocol <code>unique-proof-suite-v1</code> ·
+    <a href="/proofs/">Proofs</a> · <a href="/valhalla/">Valhalla</a> · <a href="/about/">About</a> ·
+    licensing@rogue-intelligence.com
+  </footer>
+
+  <script>
+    const FALLBACK = null;
+    let canonical = null;
+    let stepIndex = -1;
+    let timer = null;
+
+    const el = (id) => document.getElementById(id);
+
+    async function loadCanonical() {
+      try {
+        const r = await fetch("canonical.json", { cache: "no-store" });
+        if (r.ok) return await r.json();
+      } catch (_) {}
+      try {
+        const r = await fetch("/api/canonical", { cache: "no-store" });
+        if (r.ok) return await r.json();
+      } catch (_) {}
+      return FALLBACK;
+    }
+
+    async function pingApi() {
+      const pill = el("apiStatus");
+      try {
+        const r = await fetch("/api/health", { cache: "no-store" });
+        if (!r.ok) throw new Error("bad");
+        const j = await r.json();
+        pill.textContent = j.live_available ? "API · live ready" : "API · replay only";
+        pill.className = "status-pill ok";
+      } catch (_) {
+        pill.textContent = "Static · replay only";
+        pill.className = "status-pill warn";
+      }
+    }
+
+    function currentScenario() {
+      return canonical.scenarios[el("scenario").value];
+    }
+
+    function currentClaim() {
+      const sc = currentScenario();
+      return canonical.claims[sc.proof_id];
+    }
+
+    function renderClaim() {
+      const c = currentClaim();
+      el("claim").innerHTML = `
+        <div class="id">${c.id} · ${c.name}</div>
+        <div style="margin-top:0.35rem">${c.one_liner}</div>
+        <div style="margin-top:0.45rem;color:var(--muted);font-size:0.86rem">Baseline: ${c.baseline} · Pass: ${c.pass_bar}</div>
+      `;
+      el("bound").textContent = "Honest bound: " + c.bound;
+    }
+
+    function renderSteps(active = -1) {
+      const sc = currentScenario();
+      el("flow").innerHTML = sc.steps.map((s, i) =>
+        `<span class="chip ${i <= active ? "on" : ""}">${s.label}</span>${i < sc.steps.length - 1 ? "→" : ""}`
+      ).join("");
+      el("steps").innerHTML = sc.steps.map((s, i) => `
+        <div class="step ${i === active ? "active" : ""} ${i < active ? "done" : ""}">
+          <div class="idx">${i + 1}</div>
+          <div>
+            <div class="label">${s.label}</div>
+            <div class="detail">${s.detail}</div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function pct(x) { return Math.round(x * 1000) / 10; }
+
+    function renderViz(progress) {
+      const key = el("scenario").value;
+      const c = currentClaim();
+      const viz = el("viz");
+
+      if (key === "pollution") {
+        const m = c.metrics;
+        const showNaive = progress >= 2;
+        const showRecover = progress >= 3;
+        const p = showNaive ? m.polluted_acc : 0.05;
+        const t = showRecover ? m.transfer_acc : (showNaive ? m.polluted_acc : 0.05);
+        const i = showRecover ? m.isolated_acc : 0.05;
+        viz.innerHTML = `
+          <div class="bars">
+            <div class="bar-col">
+              <div class="bar-val">${showNaive ? pct(p) + "%" : "—"}</div>
+              <div class="bar polluted" style="height:${p * 100}%"></div>
+              <div class="bar-label">Polluted</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-val">${showRecover ? pct(t) + "%" : "—"}</div>
+              <div class="bar transfer" style="height:${t * 100}%"></div>
+              <div class="bar-label">Transfer</div>
+            </div>
+            <div class="bar-col">
+              <div class="bar-val">${showRecover ? pct(i) + "%" : "—"}</div>
+              <div class="bar isolated" style="height:${i * 100}%"></div>
+              <div class="bar-label">Isolated</div>
+            </div>
+          </div>
+          <div class="metric-grid">
+            <div class="metric"><div class="k">Δ vs polluted</div><div class="v">${showRecover ? "+" + m.delta_pp + " pp" : "…"}</div></div>
+            <div class="metric"><div class="k">Pass bar</div><div class="v">≥ +20 pp</div></div>
+            <div class="metric"><div class="k">LM fine-tune</div><div class="v">none</div></div>
+          </div>`;
+      } else if (key === "abstain") {
+        const m = c.metrics;
+        const gated = progress >= 2;
+        viz.innerHTML = `
+          <div class="metric-grid">
+            <div class="metric"><div class="k">MAR (mismatch abstain)</div><div class="v">${gated ? m.MAR : "…"}</div></div>
+            <div class="metric"><div class="k">FIR (false interrupt)</div><div class="v">${gated ? m.FIR : "…"}</div></div>
+            <div class="metric"><div class="k">PPI</div><div class="v">${gated ? m.PPI : "…"}</div></div>
+          </div>
+          <p style="color:var(--muted);font-size:0.9rem;margin:0.5rem 0 0">
+            ${progress < 1 ? "Waiting for under-specified ask…" :
+              progress < 2 ? "Gate evaluating evidence…" :
+              progress < 3 ? "Abstain — refuse false tool action." :
+              "Protocol gates pass. Not a zero-incident SLA."}
+          </p>`;
+      } else {
+        const done = progress >= 2;
+        viz.innerHTML = `
+          <div class="metric-grid">
+            <div class="metric"><div class="k">Verdict</div><div class="v" style="font-size:0.95rem">${done ? c.metrics.verdict : "…"}</div></div>
+            <div class="metric"><div class="k">LM role</div><div class="v" style="font-size:0.95rem">${done ? "optional decode" : "active"}</div></div>
+            <div class="metric"><div class="k">Structure</div><div class="v" style="font-size:0.95rem">${done ? "persists" : "building"}</div></div>
+          </div>
+          <p style="color:var(--muted);font-size:0.9rem;margin:0.5rem 0 0">
+            ${progress < 1 ? "Incubating structure outside LM weights…" :
+              progress < 2 ? "Swapping decode backbone…" :
+              "Structure path remains usable after swap."}
+          </p>`;
+      }
+    }
+
+    function log(msg) {
+      const box = el("log");
+      const t = new Date().toISOString().slice(11, 19);
+      box.textContent += `\n[${t}] ${msg}`;
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function resetView() {
+      stepIndex = -1;
+      renderClaim();
+      renderSteps(-1);
+      renderViz(-1);
+      el("log").textContent = `Scenario: ${currentScenario().title}`;
+    }
+
+    async function tryRun() {
+      const btn = el("runBtn");
+      btn.disabled = true;
+      clearInterval(timer);
+      resetView();
+      const mode = el("mode").value;
+      const scenario = el("scenario").value;
+      log(`mode=${mode} scenario=${scenario}`);
+
+      let result = null;
+      if (mode === "live") {
+        try {
+          const r = await fetch(`/api/try/${scenario}?mode=live`, { method: "POST" });
+          result = await r.json();
+          log(`live response: ${result.status} · ${result.note || ""}`);
+        } catch (e) {
+          log("live API unreachable — falling back to canonical replay");
+          modeFallback();
+        }
+      } else {
+        modeFallback();
+      }
+
+      function modeFallback() {
+        result = {
+          status: "canonical_replay",
+          proof_id: currentClaim().id,
+          metrics: currentClaim().metrics,
+          note: "Replaying published lab metrics. Re-run Unique suite for fresh artifacts."
+        };
+      }
+
+      const steps = currentScenario().steps;
+      let i = 0;
+      timer = setInterval(() => {
+        renderSteps(i);
+        renderViz(i);
+        log(`step ${i + 1}/${steps.length}: ${steps[i].label}`);
+        i += 1;
+        if (i >= steps.length) {
+          clearInterval(timer);
+          if (result) {
+            log(`done · ${result.status} · ${JSON.stringify(result.metrics)}`);
+          }
+          btn.disabled = false;
+        }
+      }, 700);
+    }
+
+    el("scenario").addEventListener("change", resetView);
+    el("runBtn").addEventListener("click", tryRun);
+
+    (async () => {
+      canonical = await loadCanonical();
+      if (!canonical) {
+        el("log").textContent = "Failed to load canonical.json — open via proof_playground_server.py";
+        return;
+      }
+      await pingApi();
+      resetView();
+    })();
+  </script>
+</body>
+</html>

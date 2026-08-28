@@ -102,12 +102,26 @@ This section states **willingness**, not a completed round.
   </ul>
 </div>
 
+## Book a call
+
+<div class="cta-row">
+  <a class="btn solid" href="mailto:licensing@rogue-intelligence.com?subject=Fit%20call%20%2F%20Audit">Email for a 20-min fit call</a>
+  <a class="btn" href="{{ '/proofs/' | relative_url }}">Unique Proofs</a>
+  <a class="btn" href="{{ '/playground/' | relative_url }}">Proof Playground</a>
+</div>
+
+<p class="small muted">
+  Booking link placeholder — replace with Calendly/Cal.com when ready:
+  <code>https://calendly.com/YOUR_HANDLE/valhalla-fit</code>
+  (set the same URL in site config <code>booking_url</code> later).
+</p>
+
 ## Contact
 
 | Channel | Address |
 |---------|---------|
 | Licensing / research / capital / gifts | **licensing@rogue-intelligence.com** |
-| Primary public pages | [Overview]({{ '/' | relative_url }}) · [Valhalla]({{ '/valhalla/' | relative_url }}) |
+| Primary public pages | [Overview]({{ '/' | relative_url }}) · [Valhalla]({{ '/valhalla/' | relative_url }}) · [Proofs]({{ '/proofs/' | relative_url }}) |
 
 <div class="lang-block" id="zh">
   <div class="lang-label">中文 · 关于作者</div>
