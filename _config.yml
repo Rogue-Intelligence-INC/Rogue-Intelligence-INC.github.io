@@ -1,0 +1,25 @@
+title: Rogue Intelligence
+description: Independent research laboratory — Valhalla, Yaksha Cipher, and Wave. Self-funded R&D since 2025-04-05.
+url: "https://rogue-intelligence-inc.github.io"
+baseurl: ""
+
+# Built by GitHub Actions (jekyll-build-pages); theme gem not required.
+theme: null
+markdown: kramdown
+highlighter: rouge
+plugins: []
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .github
+  - sync-from-monorepo.sh
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      lang: en
