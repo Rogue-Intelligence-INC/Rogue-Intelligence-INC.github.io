@@ -1,6 +1,6 @@
 ---
 title: Windohouse Lad
-nav: ""
+nav: about
 kicker: Lab notebook (archival)
 description: Minimal lab notebook front door — outreach and theory cross-checks.
 permalink: /windohouse-lad/

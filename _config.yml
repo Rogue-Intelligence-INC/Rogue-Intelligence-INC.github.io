@@ -7,23 +7,14 @@ email: licensing@rogue-intelligence.com
 footer_blurb: Self-funded independent R&D · Primary line: Valhalla
 lang: en
 
-# Build: GitHub Actions → actions/jekyll-build-pages → deploy-pages
-# Extensibility: _data/navigation.yml · _includes/* · collections below
-theme: null
 markdown: kramdown
-highlighter: rouge
-strict_front_matter: true
+plugins: []
 
-# Future content types (enable output when ready):
 collections:
   papers:
     output: false
-    permalink: /papers/:name/
   notes:
     output: false
-    permalink: /notes/:name/
-
-plugins: []
 
 exclude:
   - Gemfile
