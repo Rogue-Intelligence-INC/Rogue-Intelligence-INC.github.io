@@ -1,33 +1,19 @@
 <!doctype html>
-<html lang="{{ page.lang | default: 'en' }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ page.description | default: site.description | escape }}">
-    <title>{% if page.title %}{{ page.title }} · {% endif %}Rogue Intelligence</title>
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    {% if site.custom_head %}{{ site.custom_head }}{% endif %}
   </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="site-header">
-      <div class="wrap header-inner">
-        <a class="brand" href="{{ '/' | relative_url }}">
-          <span class="brand-name">Rogue Intelligence</span>
-          <span class="brand-mark">Independent research · since 2025-04-05</span>
-        </a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="{{ '/' | relative_url }}" {% if page.nav == 'home' %}class="active"{% endif %}>Overview</a>
-          <a href="{{ '/valhalla/' | relative_url }}" {% if page.nav == 'valhalla' %}class="active"{% endif %}>Valhalla</a>
-          <a href="{{ '/cryptography/' | relative_url }}" {% if page.nav == 'cryptography' %}class="active"{% endif %}>Cryptography</a>
-          <a href="{{ '/wave/' | relative_url }}" {% if page.nav == 'wave' %}class="active"{% endif %}>Wave</a>
-          <a href="{{ '/about/' | relative_url }}" {% if page.nav == 'about' %}class="active"{% endif %}>About</a>
-        </nav>
-      </div>
-    </header>
+  <body class="page-{{ page.nav | default: 'default' }}">
+    {% include header.html %}
 
     <main id="main" class="page">
       <article class="wrap article">
@@ -38,20 +24,6 @@
       </article>
     </main>
 
-    <footer class="site-footer">
-      <div class="wrap footer-inner">
-        <div>
-          <strong>Rogue Intelligence</strong><br>
-          Self-funded independent R&amp;D · Primary line: Valhalla
-        </div>
-        <div class="footer-links">
-          <a href="{{ '/about/' | relative_url }}">Author · financing · gifts</a>
-          <a href="mailto:licensing@rogue-intelligence.com">licensing@rogue-intelligence.com</a>
-        </div>
-        <div class="footer-note">
-          © {{ site.time | date: '%Y' }} Rogue Intelligence. Scientific / technical materials. Not investment advice.
-        </div>
-      </div>
-    </footer>
+    {% include footer.html %}
   </body>
 </html>

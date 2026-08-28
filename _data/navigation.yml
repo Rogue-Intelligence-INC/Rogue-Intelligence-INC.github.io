@@ -1,0 +1,21 @@
+# Shared site navigation — extend here for new top-level pages.
+primary:
+  - title: Overview
+    url: /
+    nav: home
+  - title: Valhalla
+    url: /valhalla/
+    nav: valhalla
+  - title: Cryptography
+    url: /cryptography/
+    nav: cryptography
+  - title: Wave
+    url: /wave/
+    nav: wave
+  - title: About
+    url: /about/
+    nav: about
+
+# Future extension points (unused until enabled in includes):
+# secondary: []
+# footer_links: []
