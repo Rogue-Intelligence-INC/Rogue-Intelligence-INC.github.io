@@ -1,6 +1,9 @@
 # Rogue Intelligence — GitHub Pages site
 
-Scientific front door for the laboratory (research-serious style).
+**Live:** [https://rogue-intelligence-inc.github.io/](https://rogue-intelligence-inc.github.io/)  
+**Deploy repo:** [Rogue-Intelligence-INC/Rogue-Intelligence-INC.github.io](https://github.com/Rogue-Intelligence-INC/Rogue-Intelligence-INC.github.io)
+
+Scientific front door (research-serious style). This folder is the editable source in the Valhalla monorepo; the `.github.io` repo is what Pages serves.
 
 ## Pages
 
@@ -10,8 +13,22 @@ Scientific front door for the laboratory (research-serious style).
 | `/valhalla/` | **Primary** product line |
 | `/cryptography/` | Secondary — Yaksha Cipher |
 | `/wave/` | Secondary — Wave / Val-OS |
-| `/about/` | Author bio · self-funded since 2025-04-05 · financing · personal gifts |
-| `/windohouse-lad/` | Archival lab notebook |
+| `/about/` | Author · self-funded since 2025-04-05 · financing · personal gifts |
+
+## Publish / sync
+
+```bash
+# From Valhalla monorepo — sync this folder to the Pages repo and push
+rsync -a --delete \
+  --exclude '.git' --exclude '_site' --exclude '.jekyll-cache' --exclude 'vendor' \
+  rogue-intelligence-site/ /tmp/ri-pages-sync/
+cd /tmp/ri-pages-sync
+# clone or pull Rogue-Intelligence-INC.github.io, copy files, commit, push main
+```
+
+Or clone the Pages repo, copy updated files from `rogue-intelligence-site/`, commit, `git push`.
+
+Pages build mode: **legacy** (branch `main` / root). GitHub builds Jekyll automatically.
 
 ## Local preview
 
@@ -19,15 +36,6 @@ Scientific front door for the laboratory (research-serious style).
 cd rogue-intelligence-site
 bundle install
 bundle exec jekyll serve
-# → http://127.0.0.1:4000/
 ```
-
-If `bundle` is unavailable, the static HTML/CSS/Markdown still documents structure; GitHub Pages builds with `github-pages` gem (see `Gemfile`).
-
-## Publish notes
-
-1. Set `url` / `baseurl` in `_config.yml` for the real Pages host.  
-2. Financing and gift willingness appear **only** on `/about/` by design.  
-3. Do not put wallet addresses on the site — confirm by email.
 
 Contact: licensing@rogue-intelligence.com
