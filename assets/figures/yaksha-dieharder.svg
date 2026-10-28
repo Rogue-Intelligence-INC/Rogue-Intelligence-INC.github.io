@@ -1,27 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" role="img" aria-labelledby="t d">
-  <title id="t">Yaksha Dieharder comparison</title>
-  <desc id="d">Pass rates for neural and core modes on random plaintext, and core mode on sequential bytes.</desc>
-  <rect width="680" height="300" fill="#f4faf8"/>
-  <text x="24" y="32" font-family="Georgia, serif" font-size="20" fill="#0e2c33">Dieharder pass rate</text>
-  <text x="24" y="52" font-family="IBM Plex Mono, Consolas, monospace" font-size="11" fill="#3d5c63">3.31.1 · 50 MB · 31 January 2026</text>
-  <line x1="80" y1="70" x2="80" y2="210" stroke="#0e2c33"/>
-  <line x1="80" y1="210" x2="640" y2="210" stroke="#0e2c33"/>
-  <text x="72" y="214" text-anchor="end" font-family="IBM Plex Mono, Consolas, monospace" font-size="10" fill="#3d5c63">0%</text>
-  <text x="72" y="74" text-anchor="end" font-family="IBM Plex Mono, Consolas, monospace" font-size="10" fill="#3d5c63">100%</text>
-  <!-- 140px = 100%. 49/54 = 90.74% ’ 127px, y=83 -->
-  <rect x="130" y="83" width="90" height="127" fill="#145a78"/>
-  <text x="175" y="74" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="12" fill="#0e2c33">49/54</text>
-  <text x="175" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#0e2c33">Neural</text>
-  <text x="175" y="252" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6a8a90">Random input</text>
-  <!-- ~90% ’ 126px, y=84 -->
-  <rect x="300" y="84" width="90" height="126" fill="#0d7a68"/>
-  <text x="345" y="74" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="12" fill="#0e2c33">~90%</text>
-  <text x="345" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#0e2c33">Parametric, core</text>
-  <text x="345" y="252" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6a8a90">Random input</text>
-  <!-- 18% ’ 25px, y=185 -->
-  <rect x="490" y="185" width="90" height="25" fill="#1a6a7a"/>
-  <text x="535" y="176" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="12" fill="#0e2c33">~18%</text>
-  <text x="535" y="234" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#0e2c33">Core</text>
-  <text x="535" y="252" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6a8a90">Sequential bytes</text>
-  <text x="24" y="284" font-family="Inter, sans-serif" font-size="12" fill="#3d5c63">A pass is not a proof of confidentiality. The sequential row is the stricter one. marsaglia_tsang_gcd failed on the neural runs.</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="270" viewBox="0 0 740 270">
+<title>Yaksha Dieharder</title>
+<desc>Pass rates. A pass is not a security proof.</desc>
+<rect width="740" height="270" fill="#ffffff"/>
+<text x="24" y="28" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#111111">Dieharder pass rate</text>
+<text x="24" y="48" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">3.31.1, 50 MB, 31 January 2026</text>
+<line x1="48" y1="70" x2="48" y2="210" stroke="#111"/>
+<line x1="48" y1="210" x2="700" y2="210" stroke="#111"/>
+<text x="42" y="74" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333">100%</text>
+<text x="42" y="214" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333">0</text>
+<rect x="120" y="83" width="100" height="127" fill="#0066FF"/>
+<text x="170" y="75" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111111">49/54</text>
+<text x="170" y="232" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">Neural</text>
+<text x="170" y="250" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">Random input</text>
+<rect x="300" y="84" width="100" height="126" fill="#00C853"/>
+<text x="350" y="76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111111">~90%</text>
+<text x="350" y="232" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">Parametric, core</text>
+<text x="350" y="250" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">Random input</text>
+<rect x="500" y="185" width="100" height="25" fill="#00A99A"/>
+<text x="550" y="177" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111111">~18%</text>
+<text x="550" y="232" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">Core</text>
+<text x="550" y="250" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">Sequential bytes</text>
 </svg>

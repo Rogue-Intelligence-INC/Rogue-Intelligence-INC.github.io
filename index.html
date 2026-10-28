@@ -58,52 +58,62 @@ try {
     <div class="frame">
       <p class="kicker">Four research lines</p>
       <h2 id="lines-title">Each line has its own question.</h2>
-      <p class="lede">Valhalla is the structural platform. S-WIND, Yaksha, and Wave are not features of that platform. They are separate research programs that happen to share a laboratory, and in a few places a vocabulary.</p>
-      <div class="line-list">
-        <a class="line line-valhalla" href="/valhalla/">
-          <span class="idx">01 / Research</span>
-          <div>
-            <h3>Valhalla</h3>
-            <p class="role">Main project</p>
+      <p class="lede">Valhalla is the structural platform. S-WIND, Yaksha, and Wave are not features of that platform. They are separate research programs that happen to share a laboratory, and in a few places a vocabulary. The Windows shell sits beside them as a sub-project.</p>
+      <div class="reel" data-reel>
+        <div class="reel-tools">
+          <p class="small muted">Slide sideways. Five cards.</p>
+          <div class="reel-nav">
+            <button type="button" data-reel-prev aria-label="Previous project">Prev</button>
+            <button type="button" data-reel-next aria-label="Next project">Next</button>
           </div>
-          <div>
-            <p>Cultivates a body from an empty session by scheduling, formation, and gating laws. Hub, Tile, and Stem form in that body. A language model, if one is attached later, only decodes.</p>
-            <p class="more">How the stack is arranged</p>
-          </div>
-        </a>
-        <a class="line line-swind" href="/s-wind/">
-          <span class="idx">02 / Research</span>
-          <div>
-            <h3>S-WIND</h3>
-            <p class="role">Mathematical discovery</p>
-          </div>
-          <div>
-            <p>Exact rational arithmetic, then a formal test of whether a pattern is a known sequence, a fit, or a candidate with degrees of freedom left over.</p>
-            <p class="more">The discovery criterion</p>
-          </div>
-        </a>
-        <a class="line line-yaksha" href="/cryptography/">
-          <span class="idx">03 / Research</span>
-          <div>
-            <h3>Yaksha</h3>
-            <p class="role">Cryptographic research</p>
-          </div>
-          <div>
-            <p>An experimental symmetric stack: parameterized transforms, a two-phase Ocean wrapper, and a stateful authenticated mode. Randomness tests are reported with their failures.</p>
-            <p class="more">What was built, and what a test does not prove</p>
-          </div>
-        </a>
-        <a class="line line-wave" href="/wave/">
-          <span class="idx">04 / Research</span>
-          <div>
-            <h3>Wave</h3>
-            <p class="role">Rule-driven computing</p>
-          </div>
-          <div>
-            <p>A language for intent and rule combinations. The rules are translated into machine behavior: x86-64 instructions, system calls, or a documented GPU mapping.</p>
-            <p class="more">From a rule to a machine</p>
-          </div>
-        </a>
+        </div>
+        <div class="reel-track" data-reel-track tabindex="0">
+          <a class="reel-card" data-line="valhalla" href="/valhalla/">
+            <img src="/assets/figures/valhalla-cycle.svg" alt="Scheduling cycle: BlackHole, MeshBrain, MultiNova, BaseForce." width="780" height="190">
+            <div class="pad">
+              <p class="kicker">01 / Main project</p>
+              <h3>Valhalla</h3>
+              <p>Cultivates a body from an empty session by scheduling, formation, and gating laws. A language model, if one is attached later, only decodes.</p>
+              <p class="more">How the stack is arranged</p>
+            </div>
+          </a>
+          <a class="reel-card" data-line="swind" href="/s-wind/">
+            <img src="/assets/figures/swind-cycle.svg" alt="S-WIND calculation cycle from a signal to an outward prediction." width="760" height="400">
+            <div class="pad">
+              <p class="kicker">02 / Mathematical discovery</p>
+              <h3>S-WIND</h3>
+              <p>Exact rational arithmetic, then a formal test of whether a pattern is a known sequence, a fit, or a candidate with degrees of freedom left over.</p>
+              <p class="more">The discovery criterion</p>
+            </div>
+          </a>
+          <a class="reel-card" data-line="yaksha" href="/cryptography/">
+            <img src="/assets/figures/yaksha-dieharder.svg" alt="Dieharder pass rates for neural, parametric, and sequential core." width="740" height="270">
+            <div class="pad">
+              <p class="kicker">03 / Cryptography</p>
+              <h3>Yaksha</h3>
+              <p>An experimental symmetric stack: parameterized transforms, a two-phase Ocean wrapper, and a stateful authenticated mode. Randomness tests are reported with their failures.</p>
+              <p class="more">What was built, and what a test does not prove</p>
+            </div>
+          </a>
+          <a class="reel-card" data-line="wave" href="/wave/">
+            <img src="/assets/figures/wave-rules.svg" alt="Wave field parameters feeding eight rules and a lowering." width="760" height="240">
+            <div class="pad">
+              <p class="kicker">04 / Languages and systems</p>
+              <h3>Wave</h3>
+              <p>A language for intent and rule combinations. The rules are translated into machine behavior: x86-64 instructions, system calls, or a documented GPU mapping.</p>
+              <p class="more">From a rule to a machine</p>
+            </div>
+          </a>
+          <a class="reel-card" data-line="windows" href="/windows/">
+            <img src="/assets/figures/windows-shell.svg" alt="Windows shell modules: an attached model, chats, knowledge, screen, and gated control." width="760" height="180">
+            <div class="pad">
+              <p class="kicker">Sub-project</p>
+              <h3>Windows shell</h3>
+              <p>A currently usable enhancer for an instruction model that already exists. It does not cultivate a body from an empty session.</p>
+              <p class="more">What the shell does today</p>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </section>

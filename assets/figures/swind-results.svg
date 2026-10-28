@@ -1,28 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" role="img" aria-labelledby="t d">
-  <title id="t">S-WIND manuscript experiment summary</title>
-  <desc id="d">Fourteen recognized, five emergent laws, three interpolant fits, out of twenty-two.</desc>
-  <rect width="680" height="300" fill="#f4faf8"/>
-  <text x="24" y="32" font-family="Georgia, serif" font-size="20" fill="#0e2c33">Manuscript summary, 22 experiments</text>
-  <text x="24" y="52" font-family="IBM Plex Mono, Consolas, monospace" font-size="11" fill="#3d5c63">Abstract, January 2026 · not re-run on this site</text>
-  <line x1="70" y1="70" x2="70" y2="220" stroke="#0e2c33"/>
-  <line x1="70" y1="220" x2="640" y2="220" stroke="#0e2c33"/>
-  <text x="62" y="224" text-anchor="end" font-family="IBM Plex Mono, Consolas, monospace" font-size="10" fill="#3d5c63">0</text>
-  <text x="62" y="74" text-anchor="end" font-family="IBM Plex Mono, Consolas, monospace" font-size="10" fill="#3d5c63">22</text>
-  <!-- scale 150px = 22, so 1 unit = 6.818 -->
-  <!-- 14 ’ 95.5, y = 220-95.5 = 124.5 -->
-  <rect x="130" y="125" width="90" height="95" fill="#145a78"/>
-  <text x="175" y="116" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="13" fill="#0e2c33">14</text>
-  <text x="175" y="246" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#0e2c33">Recognized</text>
-  <text x="175" y="264" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6a8a90">Known</text>
-  <!-- 5 ’ 34.1, y = 185.9 -->
-  <rect x="300" y="186" width="90" height="34" fill="#0d7a68"/>
-  <text x="345" y="178" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="13" fill="#0e2c33">5</text>
-  <text x="345" y="246" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#0e2c33">EmergentLaw</text>
-  <text x="345" y="264" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6a8a90">DoF e 2</text>
-  <!-- 3 ’ 20.5, y = 199.5 -->
-  <rect x="470" y="200" width="90" height="20" fill="#1a6a7a"/>
-  <text x="515" y="192" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="13" fill="#0e2c33">3</text>
-  <text x="515" y="246" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#0e2c33">InterpolantFit</text>
-  <text x="515" y="264" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6a8a90">DoF = 0</text>
-  <text x="24" y="288" font-family="Inter, sans-serif" font-size="12" fill="#3d5c63">These three labels partition the abstracts 22. The paper is a manuscript, not a peer-reviewed result.</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="270" viewBox="0 0 740 270">
+<title>S-WIND experiment counts</title>
+<desc>14 recognized, 5 emergent laws, 3 interpolant fits.</desc>
+<rect width="740" height="270" fill="#ffffff"/>
+<text x="24" y="28" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#111111">Manuscript summary: 22 experiments</text>
+<text x="24" y="48" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">Abstract, January 2026. Not re-run here.</text>
+<line x1="56" y1="70" x2="56" y2="210" stroke="#111"/>
+<line x1="56" y1="210" x2="700" y2="210" stroke="#111"/>
+<text x="50" y="74" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333">22</text>
+<text x="50" y="214" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333">0</text>
+<rect x="140" y="121" width="90" height="89" fill="#0066FF"/>
+<text x="185" y="113" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111111">14</text>
+<text x="185" y="232" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">Recognized</text>
+<text x="185" y="250" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">Known</text>
+<rect x="310" y="178" width="90" height="32" fill="#00C853"/>
+<text x="355" y="170" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111111">5</text>
+<text x="355" y="232" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">EmergentLaw</text>
+<text x="355" y="250" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">DoF at least 2</text>
+<rect x="490" y="191" width="90" height="19" fill="#00A99A"/>
+<text x="535" y="183" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111111">3</text>
+<text x="535" y="232" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">InterpolantFit</text>
+<text x="535" y="250" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">DoF = 0</text>
 </svg>

@@ -51,11 +51,36 @@ try {
   </header>
   <section class="section">
     <div class="frame">
-      <div class="cards">
-        <a class="card" href="/valhalla/"><p class="kicker">01 · Main project</p><h3>Valhalla</h3><p>Law-governed generation. A structure-trainable body cultivated from an empty session, with an optional decoder attached later.</p></a>
-        <a class="card" href="/s-wind/"><p class="kicker">02 · Mathematical discovery</p><h3>S-WIND</h3><p>Exact rationals, pattern classes, and a criterion that refuses interpolation.</p></a>
-        <a class="card" href="/cryptography/"><p class="kicker">03 · Cryptography</p><h3>Yaksha</h3><p>Experimental symmetric encryption. Val-Crypt is documented beside it, not inside it.</p></a>
-        <a class="card" href="/wave/"><p class="kicker">04 · Languages and systems</p><h3>Wave</h3><p>Rule-driven language, three alpha compilers, and a documented GPU rule path.</p></a>
+      <div class="reel" data-reel>
+        <div class="reel-tools">
+          <p class="small muted">Slide sideways. Five cards.</p>
+          <div class="reel-nav">
+            <button type="button" data-reel-prev aria-label="Previous project">Prev</button>
+            <button type="button" data-reel-next aria-label="Next project">Next</button>
+          </div>
+        </div>
+        <div class="reel-track" data-reel-track tabindex="0">
+          <a class="reel-card" data-line="valhalla" href="/valhalla/">
+            <img src="/assets/figures/valhalla-runtime.svg" alt="Valhalla runtime stack." width="860" height="380">
+            <div class="pad"><p class="kicker">01 / Main project</p><h3>Valhalla</h3><p>Law-governed generation. A structure-trainable body cultivated from an empty session, with an optional decoder attached later.</p><p class="more">Open Valhalla</p></div>
+          </a>
+          <a class="reel-card" data-line="swind" href="/s-wind/">
+            <img src="/assets/figures/swind-results.svg" alt="S-WIND manuscript counts: 14, 5, and 3." width="740" height="270">
+            <div class="pad"><p class="kicker">02 / Mathematical discovery</p><h3>S-WIND</h3><p>Exact rationals, pattern classes, and a criterion that refuses interpolation.</p><p class="more">Open S-WIND</p></div>
+          </a>
+          <a class="reel-card" data-line="yaksha" href="/cryptography/">
+            <img src="/assets/figures/yaksha-dieharder.svg" alt="Yaksha Dieharder pass rates." width="740" height="270">
+            <div class="pad"><p class="kicker">03 / Cryptography</p><h3>Yaksha</h3><p>Experimental symmetric encryption. Val-Crypt is documented beside it, not inside it.</p><p class="more">Open Yaksha</p></div>
+          </a>
+          <a class="reel-card" data-line="wave" href="/wave/">
+            <img src="/assets/figures/wave-rules.svg" alt="Wave rules from a field to a lowering." width="760" height="240">
+            <div class="pad"><p class="kicker">04 / Languages and systems</p><h3>Wave</h3><p>Rule-driven language, three alpha compilers, and a documented GPU rule path.</p><p class="more">Open Wave</p></div>
+          </a>
+          <a class="reel-card" data-line="windows" href="/windows/">
+            <img src="/assets/figures/windows-shell.svg" alt="Windows shell modules." width="760" height="180">
+            <div class="pad"><p class="kicker">Sub-project</p><h3>Windows shell</h3><p>A usable enhancer for an attached instruction model. Valhalla remains the main project.</p><p class="more">Open the shell</p></div>
+          </a>
+        </div>
       </div>
     </div>
   </section>

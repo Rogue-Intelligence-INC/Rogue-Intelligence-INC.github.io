@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="180" viewBox="0 0 760 180">
+<title>Valhalla formation counts</title>
+<desc>Tiles, stems, hub, and stem sigma from one internal record.</desc>
+<rect width="760" height="180" fill="#ffffff"/>
+<text x="24" y="28" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#111111">One formation record</text>
+<text x="24" y="48" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">Protocol triad-structure-highlight-v1, internal</text>
+<rect x="24" y="68" width="170" height="88" fill="#ffffff" stroke="#0066FF" stroke-width="1.6"/>
+<text x="109" y="108" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#0066FF">16</text>
+<text x="109" y="134" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">tiles</text>
+<rect x="209" y="68" width="170" height="88" fill="#ffffff" stroke="#00C853" stroke-width="1.6"/>
+<text x="294" y="108" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#00C853">108</text>
+<text x="294" y="134" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">stems</text>
+<rect x="394" y="68" width="170" height="88" fill="#ffffff" stroke="#00A99A" stroke-width="1.6"/>
+<text x="479" y="108" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#00A99A">104 x 4</text>
+<text x="479" y="134" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">hub</text>
+<rect x="579" y="68" width="170" height="88" fill="#ffffff" stroke="#0066FF" stroke-width="1.6"/>
+<text x="664" y="108" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#0066FF">9.27</text>
+<text x="664" y="134" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">stem sigma</text>
+</svg>

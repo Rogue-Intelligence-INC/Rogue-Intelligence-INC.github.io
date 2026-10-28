@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="748" height="280" viewBox="0 0 748 280">
+<title>S-WIND fit levels</title>
+<desc>Interpolant, descriptive, predictive, and emergent law.</desc>
+<rect width="748" height="280" fill="#ffffff"/>
+<text x="24" y="28" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#111111">Fit levels</text>
+<text x="24" y="48" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">From the engineering report. DoF 0 is not a discovery.</text>
+<rect x="24" y="64" width="700" height="44" fill="#ffffff" stroke="#111111" stroke-width="1.6"/>
+<text x="40" y="91" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">InterpolantFit   DoF = 0. The polynomial only passes through the points.</text>
+<rect x="24" y="116" width="700" height="44" fill="#ffffff" stroke="#00A99A" stroke-width="1.6"/>
+<text x="40" y="143" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">DescriptiveModel   DoF above 0, and the outward check failed.</text>
+<rect x="24" y="168" width="700" height="44" fill="#ffffff" stroke="#0066FF" stroke-width="1.6"/>
+<text x="40" y="195" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">PredictiveFit   Outward check passed, effective DoF below 2.</text>
+<rect x="24" y="220" width="700" height="44" fill="#00C853" stroke="#00C853" stroke-width="1.6"/>
+<text x="40" y="247" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff">EmergentLaw   Outward check passed, and DoF is at least 2.</text>
+</svg>

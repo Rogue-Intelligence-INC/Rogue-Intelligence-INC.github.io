@@ -1,38 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="t d">
-  <title id="t">Valhalla internal comparisons</title>
-  <desc id="d">Shared patch against isolated patch, and structure-only multiple choice against the model head.</desc>
-  <rect width="760" height="340" fill="#f4faf8"/>
-  <text x="24" y="32" font-family="Georgia, serif" font-size="20" fill="#0e2c33">Two internal comparisons</text>
-  <text x="24" y="52" font-family="IBM Plex Mono, Consolas, monospace" font-size="11" fill="#3d5c63">Fast scorecard, 14 July 2026</text>
-  <!-- U1 axis 0.90 to 1.00, plot y 80 to 250 -->
-  <text x="48" y="74" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#145a78">U1 · shared session</text>
-  <line x1="70" y1="90" x2="70" y2="250" stroke="#0e2c33"/>
-  <line x1="70" y1="250" x2="330" y2="250" stroke="#0e2c33"/>
-  <text x="62" y="254" text-anchor="end" font-family="IBM Plex Mono, Consolas, monospace" font-size="10" fill="#3d5c63">0.90</text>
-  <text x="62" y="94" text-anchor="end" font-family="IBM Plex Mono, Consolas, monospace" font-size="10" fill="#3d5c63">1.00</text>
-  <!-- 0.9999: (0.0999/0.10)*160 = 159.8, y=90.2, h=159.8 -->
-  <rect x="110" y="90" width="64" height="160" fill="#145a78"/>
-  <text x="142" y="82" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="11" fill="#0e2c33">0.9999</text>
-  <text x="142" y="270" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#0e2c33">Shared</text>
-  <!-- 0.968: (0.068/0.10)*160 = 108.8, y=141.2 -->
-  <rect x="210" y="141" width="64" height="109" fill="#0d7a68"/>
-  <text x="242" y="133" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="11" fill="#0e2c33">0.968</text>
-  <text x="242" y="270" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#0e2c33">Isolated</text>
-  <text x="70" y="300" font-family="Inter, sans-serif" font-size="11" fill="#6a8a90">Axis starts at 0.90 so the gap is visible.</text>
-  <!-- MCQ 0 to 100, same plot height 160 -->
-  <text x="400" y="74" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#145a78">Multiple choice · 46 items</text>
-  <line x1="420" y1="90" x2="420" y2="250" stroke="#0e2c33"/>
-  <line x1="420" y1="250" x2="700" y2="250" stroke="#0e2c33"/>
-  <text x="412" y="254" text-anchor="end" font-family="IBM Plex Mono, Consolas, monospace" font-size="10" fill="#3d5c63">0%</text>
-  <text x="412" y="94" text-anchor="end" font-family="IBM Plex Mono, Consolas, monospace" font-size="10" fill="#3d5c63">100%</text>
-  <!-- 35% of 160 = 56, y=194 -->
-  <rect x="470" y="194" width="64" height="56" fill="#1a6a7a"/>
-  <text x="502" y="186" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="11" fill="#0e2c33">35%</text>
-  <text x="502" y="270" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#0e2c33">Structure</text>
-  <!-- 63% of 160 = 100.8, y=149.2 -->
-  <rect x="570" y="149" width="64" height="101" fill="#0d7a68"/>
-  <text x="602" y="141" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="11" fill="#0e2c33">63%</text>
-  <text x="602" y="270" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#0e2c33">Model head</text>
-  <text x="420" y="300" font-family="Inter, sans-serif" font-size="11" fill="#6a8a90">Open answers are a different path.</text>
-  <text x="24" y="328" font-family="Inter, sans-serif" font-size="11" fill="#3d5c63">Internal records. The suite grade is not a claim that a transformer has been replaced.</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="320" viewBox="0 0 760 320">
+<title>Valhalla comparisons</title>
+<desc>Shared against isolated, and structure against the model head.</desc>
+<rect width="760" height="320" fill="#ffffff"/>
+<text x="24" y="28" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#111111">Two internal comparisons</text>
+<text x="24" y="48" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">Fast scorecard, 14 July 2026</text>
+<text x="24" y="78" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333">U1 shared session. Axis starts at 0.90.</text>
+<line x1="48" y1="96" x2="48" y2="236" stroke="#111"/>
+<line x1="48" y1="236" x2="340" y2="236" stroke="#111"/>
+<text x="42" y="100" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333">1.00</text>
+<text x="42" y="240" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333">0.90</text>
+<rect x="90" y="98" width="70" height="138" fill="#0066FF"/>
+<text x="125" y="90" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#111111">0.9999</text>
+<text x="125" y="256" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">Shared</text>
+<rect x="210" y="140" width="70" height="96" fill="#00C853"/>
+<text x="245" y="132" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#111111">0.968</text>
+<text x="245" y="256" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">Isolated</text>
+<text x="400" y="78" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333">Multiple choice, 46 items. Axis 0 to 100.</text>
+<line x1="400" y1="96" x2="400" y2="236" stroke="#111"/>
+<line x1="400" y1="236" x2="740" y2="236" stroke="#111"/>
+<text x="394" y="100" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333">100</text>
+<text x="394" y="240" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333">0</text>
+<rect x="470" y="187" width="70" height="49" fill="#00A99A"/>
+<text x="505" y="179" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#111111">35%</text>
+<text x="505" y="256" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">Structure</text>
+<rect x="590" y="148" width="70" height="88" fill="#0066FF"/>
+<text x="625" y="140" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#111111">63%</text>
+<text x="625" y="256" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#111111">Model head</text>
+<text x="24" y="300" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">Internal records. Open answers use a different path.</text>
 </svg>

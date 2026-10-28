@@ -1,41 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" role="img" aria-labelledby="t d">
-  <title id="t">S-WIND calculation cycle</title>
-  <desc id="d">Known check, pattern class, degrees of freedom, one outward failure, then a label.</desc>
-  <rect width="760" height="460" fill="#f4faf8"/>
-  <text x="24" y="34" font-family="Georgia, serif" font-size="20" fill="#0e2c33">Calculation cycle</text>
-  <text x="24" y="54" font-family="IBM Plex Mono, Consolas, monospace" font-size="11" fill="#3d5c63">Engineering report, 24 January 2026 · manuscript steps</text>
-  <g font-family="Inter, sans-serif" font-size="13" fill="#0e2c33">
-    <rect x="250" y="74" width="260" height="44" fill="#145a78"/>
-    <text x="380" y="101" text-anchor="middle" fill="#f4faf8" font-weight="600">Signal in</text>
-    <rect x="250" y="142" width="260" height="52" fill="#ffffff" stroke="#145a78" stroke-width="1.5"/>
-    <text x="380" y="164" text-anchor="middle" font-weight="600">Knowledge base</text>
-    <text x="380" y="182" text-anchor="middle" font-size="12" fill="#3d5c63">Match ’ Known. Not a discovery.</text>
-    <rect x="250" y="218" width="260" height="52" fill="#ffffff" stroke="#0d7a68" stroke-width="1.5"/>
-    <text x="380" y="240" text-anchor="middle" font-weight="600">Pattern class</text>
-    <text x="380" y="258" text-anchor="middle" font-size="12" fill="#3d5c63">Difference, ratio, product, factorial, recurrence</text>
-    <rect x="250" y="294" width="260" height="44" fill="#ffffff" stroke="#1a6a7a" stroke-width="1.5"/>
-    <text x="380" y="321" text-anchor="middle" font-weight="600">DoF = n  (d + 1)</text>
-    <rect x="250" y="362" width="260" height="44" fill="#0d7a68"/>
-    <text x="380" y="389" text-anchor="middle" fill="#f4faf8" font-weight="600">Predict the next point</text>
-  </g>
-  <g fill="none" stroke="#0c6e66" stroke-width="1.5" marker-end="url(#a)">
-    <line x1="380" y1="118" x2="380" y2="142"/>
-    <line x1="380" y1="194" x2="380" y2="218"/>
-    <line x1="380" y1="270" x2="380" y2="294"/>
-    <line x1="380" y1="338" x2="380" y2="362"/>
-  </g>
-  <rect x="24" y="150" width="190" height="64" fill="#e7f4f1" stroke="#0d7a68"/>
-  <text x="119" y="176" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0e2c33">Short signal</text>
-  <text x="119" y="196" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#3d5c63">Self-loop lengthens it</text>
-  <path d="M250 244 H214 V182" fill="none" stroke="#0d7a68" stroke-width="1.4" marker-end="url(#b)"/>
-  <rect x="546" y="362" width="190" height="64" fill="#ffffff" stroke="#145a78"/>
-  <text x="641" y="388" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0e2c33">One failure</text>
-  <text x="641" y="408" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#3d5c63">Descriptive model</text>
-  <path d="M510 384 H546" fill="none" stroke="#145a78" stroke-width="1.4" marker-end="url(#c)"/>
-  <text x="24" y="444" font-family="Inter, sans-serif" font-size="12" fill="#3d5c63">DoF 0 stays InterpolantFit. Out-of-sample pass and DoF at least 2 can be labeled EmergentLaw. Eight points and degree 7 give DoF 0.</text>
-  <defs>
-    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0c6e66"/></marker>
-    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0d7a68"/></marker>
-    <marker id="c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#145a78"/></marker>
-  </defs>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="400" viewBox="0 0 760 400">
+<title>S-WIND calculation cycle</title>
+<desc>Known check, pattern class, degrees of freedom, one outward test.</desc>
+<rect width="760" height="400" fill="#ffffff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#111111"/></marker></defs>
+<text x="24" y="28" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#111111">Calculation cycle</text>
+<text x="24" y="48" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">Engineering report, 24 January 2026</text>
+<rect x="160" y="70" width="440" height="46" fill="#0066FF" stroke="#0066FF" stroke-width="1.6"/>
+<text x="380" y="98" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff">1  Signal in</text>
+<line x1="380" y1="116" x2="380" y2="128" stroke="#111" marker-end="url(#a)"/>
+<rect x="160" y="128" width="440" height="46" fill="#ffffff" stroke="#0066FF" stroke-width="1.6"/>
+<text x="380" y="156" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111111">2  Knowledge base. A match is Known.</text>
+<line x1="380" y1="174" x2="380" y2="186" stroke="#111" marker-end="url(#a)"/>
+<rect x="160" y="186" width="440" height="46" fill="#ffffff" stroke="#00C853" stroke-width="1.6"/>
+<text x="380" y="214" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111111">3  Pattern class: difference, ratio, product, factorial</text>
+<line x1="380" y1="232" x2="380" y2="244" stroke="#111" marker-end="url(#a)"/>
+<rect x="160" y="244" width="440" height="46" fill="#ffffff" stroke="#00A99A" stroke-width="1.6"/>
+<text x="380" y="272" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111111">4  DoF = n - (d + 1)</text>
+<line x1="380" y1="290" x2="380" y2="302" stroke="#111" marker-end="url(#a)"/>
+<rect x="160" y="302" width="440" height="46" fill="#00C853" stroke="#00C853" stroke-width="1.6"/>
+<text x="380" y="330" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff">5  Predict the next point. One failure stops.</text>
+<rect x="16" y="186" width="130" height="70" fill="#ffffff" stroke="#00C853" stroke-width="1.6"/>
+<text x="81" y="214" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#111111">Short signal</text>
+<text x="81" y="234" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">lengthen it</text>
+<path d="M160 209 H146" fill="none" stroke="#00C853" marker-end="url(#a)"/>
+<rect x="614" y="302" width="130" height="70" fill="#ffffff" stroke="#0066FF" stroke-width="1.6"/>
+<text x="679" y="330" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#111111">One failure</text>
+<text x="679" y="350" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333">descriptive</text>
+<line x1="600" y1="325" x2="614" y2="325" stroke="#111" marker-end="url(#a)"/>
 </svg>
