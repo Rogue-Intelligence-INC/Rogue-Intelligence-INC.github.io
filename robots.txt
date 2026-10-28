@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rogue-intelligence-inc.github.io/sitemap.xml

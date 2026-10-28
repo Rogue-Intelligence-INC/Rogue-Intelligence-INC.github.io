@@ -1,135 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Valhalla — adaptive runtime for persistent AI agents. Structure, abstention, and recovery outside the LM.">
-    <link rel="canonical" href="https://rogue-intelligence-inc.github.io/valhalla/">
-    <title>Valhalla · Rogue Intelligence</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    
-  </head>
-  <body class="page-valhalla">
-    <a class="skip-link" href="#main">Skip to content</a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Valhalla · structural intelligence · Rogue Intelligence Inc.</title>
+  <meta name="description" content="Valhalla keeps a session as Hub, Tile, and Stem structure. A language model, when attached, only decodes.">
+  <link rel="canonical" href="https://rogue-intelligence-inc.github.io/valhalla/">
+  <meta property="og:title" content="Valhalla · structural intelligence · Rogue Intelligence Inc.">
+  <meta property="og:description" content="Valhalla keeps a session as Hub, Tile, and Stem structure. A language model, when attached, only decodes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rogue-intelligence-inc.github.io/valhalla/">
+  
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>
+try {
+  var t = localStorage.getItem("ri-theme");
+  if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  else if (matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.setAttribute("data-theme", "dark");
+} catch (e) {}
+</script>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="/">
-      <span class="brand-name">Rogue Intelligence</span>
-      <span class="brand-mark">Independent research · since 2025-04-05</span>
+</head>
+<body data-line="valhalla">
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="frame mast-inner">
+    <a class="mark" href="/">
+      <span class="mark-name">Rogue Intelligence</span>
+      <span class="mark-sub">Research &amp; Computing</span>
     </a>
-    <nav class="site-nav" aria-label="Primary">
-      
-      <a href="/">Overview</a>
-      
-      <a href="/valhalla/" class="active">Valhalla</a>
-      
-      <a href="/proofs/">Proofs</a>
-      
-      <a href="/cryptography/">Cryptography</a>
-      
-      <a href="/wave/">Wave</a>
-      
-      <a href="/about/">About</a>
-      
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+    <nav id="site-nav" class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/projects/">Projects</a><a href="/research/">Research</a><a href="/evidence/">Evidence</a><a href="/about/">About</a><a href="/contact/">Contact</a>
     </nav>
+    <button class="theme" type="button" data-theme-toggle aria-pressed="false">Dark</button>
   </div>
 </header>
 
+<main id="main">
+  <header class="page-head">
+    <div class="frame">
+      <p class="eyebrow">01 / Research · Structural intelligence</p>
+      <h1>Valhalla</h1>
+      <p class="deck">A session stores structure. Fate schedules signals into a body of Hub, Tile, and Stem. A language model can answer from that body. The model is not the body.</p>
+      <p class="small"><span class="tag">Architecture</span><span class="tag">Internal tests, 14 July 2026</span><span class="tag">Proprietary</span></p>
+    </div>
+  </header>
+  <div class="frame dossier">
+    <nav class="toc" aria-label="On this page">
+      <a href="#question">Question</a>
+      <a href="#idea">Central idea</a>
+      <a href="#method">How a turn works</a>
+      <a href="#names">Names</a>
+      <a href="#app">Windows shell</a>
+      <a href="#experiments">Experiments</a>
+      <a href="#limits">Limits</a>
+      <a href="#docs">Documents</a>
+    </nav>
+    <article class="prose">
+      <section id="question">
+        <h2>Research question</h2>
+        <p>Can a system keep a task as an incubated structure — shared across text, speech, and image, able to abstain, and still readable after the language model is swapped — rather than as a growing prompt?</p>
+      </section>
+      <section id="idea">
+        <h2>Central idea</h2>
+        <p>The 14 July 2026 architecture note draws five layers. Ingress accepts text, speech features, image features, and appended session material. Fate schedules that material and can emit or abstain. The Triad body is Hub, Tile, and StemCell. Feedback returns into Fate. Readout is a native answer, with a language model drawn as a dashed, optional head.</p>
+        <ol class="flow" aria-label="Valhalla stack schematic">
+          <li><span>Ingress</span><strong>One session</strong><p>Modalities are pulses in the same session, not three stores fused at the end.</p></li>
+          <li><span>Fate</span><strong>quad_cycle</strong><p>BlackHole, then MeshBrain, then MultiNova, then BaseForce.</p></li>
+          <li><span>Body</span><strong>Hub, Tile, Stem</strong><p>Route, complete a local pattern, cluster toward organs. Fragments hold the compact structure.</p></li>
+          <li><span>Feedback</span><strong>Continuity</strong><p>Question-answer feedback and a persistent snapshot.</p></li>
+          <li><span>Readout</span><strong>Native path</strong><p>Open questions can be answered from structure.</p><div class="dashed">Optional LM head. Default documented decoder: Qwen2.5-0.5B-Instruct, replaceable.</div></li>
+        </ol>
+        <p class="small muted">Schematic of the published architecture note. It is not a trace captured from a run.</p>
+      </section>
+      <section id="method">
+        <h2>How a turn works</h2>
+        <ol class="steps">
+          <li class="step"><span class="n">01</span><div><strong>Ingest</strong><p>Context lines and multimodal items build or extend an incubation snapshot. Appending changes the snapshot’s fingerprint.</p></div></li>
+          <li class="step"><span class="n">02</span><div><strong>Route</strong><p>Production notes recommend <code>fate_ingress_routing="quad_cycle"</code> and fate question-answer feedback.</p></div></li>
+          <li class="step"><span class="n">03</span><div><strong>Form structure</strong><p>Hub carries routing preference. Tile completes local pattern. StemCell clusters. The public formation record, protocol <code>triad-structure-highlight-v1</code>, reports 16 tiles, 108 stems, hub 104×4.</p></div></li>
+          <li class="step"><span class="n">04</span><div><strong>Decode by question type</strong><p>Documented hybrid routing sends open questions to native retrieval and multiple choice to a model log-probability head. Structure-only multiple choice, on the cited 46-item scale, scored 35% against the model head’s 63%.</p></div></li>
+        </ol>
+      </section>
+      <section id="names">
+        <h2>Names, and one collision</h2>
+        <p>BlackHole, MeshBrain, MultiNova, and BaseForce are the four Fate ingress quadrants, in that order, in the Valhalla architecture note. Wave-C uses the same four names for tile-memory pools. This page does not treat those pools and this ingress cycle as one implementation.</p>
+        <p>Training notes describe three structure layers: session structure, Fate pretraining, and a weight bake. The fast scorecard reports a bake weight delta of about 298. That is a measurement of a write, not a claim that the model has been replaced.</p>
+      </section>
+      <section id="app">
+        <h2>The Windows shell</h2>
+        <p>A local application, <code>valhalla-lift-desktop</code>, is a chat-first Windows shell over the Valhalla runtime. It is an application of the architecture, not a separate research line.</p>
+        <p>The chat surface sends a turn to <code>valhalla_base</code>. Settings has three panels. Knowledge is one fact per line, and chat retrieves from those lines. Models lists Qwen2.5 Instruct checkpoints, with download and use. General sets language (system, Chinese, or English), the answer strategy, and whether later questions keep the previous structure session.</p>
+        <p>Four strategies are named in the interface: faithful retrieval, hybrid multiple choice, follow-up session, and multi-hop. A self-test in the shell checks that an open item decodes on a native path, a multiple-choice item uses an LM patch, and a follow-up carries a second turn. That split is the product expression of the stack: open answers come from structure; multiple choice still uses a model head.</p>
+        <p>No interface capture is published on this site. Figures printed inside that desktop build are not repeated here; they do not match the 14 July public mirror line for line.</p>
+      </section>
+      <section id="experiments">
+        <h2>Experiments</h2>
+        <p>The figures below are from the public technical mirror and the fast scorecard dated 14 July 2026, protocol family <code>technical-core-proof-suite-v1</code> and <code>unique-proof-suite</code>. They are internal. The scorecard’s own word “PROVEN” is the suite’s grade, not a claim of general proof.</p>
+        <div class="table-wrap">
+          <table>
+            <caption>Selected internal records. Sample size is given only where the source states it.</caption>
+            <thead><tr><th>ID</th><th>What it asks</th><th>Reported result</th></tr></thead>
+            <tbody>
+              <tr><td>U1</td><td>Shared session versus isolated modalities, then fuse.</td><td>Shared patch 0.9999, isolated 0.968.</td></tr>
+              <tr><td>U2</td><td>Can Fate emit and abstain.</td><td>MAR 1.0, FIR 0.0. Also reported: PPI 0.65, agency 0.778.</td></tr>
+              <tr><td>U3</td><td>Rescue after polluted context, without a fine-tune.</td><td>+38.7 percentage points. TPI 0.755, NPPI 0.848.</td></tr>
+              <tr><td>U4</td><td>Does the structure path survive a backbone change.</td><td>Grade <code>VALHALLA_BASE_INDEPENDENT</code>.</td></tr>
+              <tr><td>E1</td><td>Is stem connectivity distinguishable from an Erdős–Rényi null.</td><td>Stem σ ≈ 9.27, clustering ≈ 0.65, growth 6→24. Protocol <code>natural-nn-topology-v1</code>.</td></tr>
+              <tr><td>E3</td><td>Do organs coalesce without a preset catalog.</td><td>Same-type body 64 at purity about 0.78, tiles 5→10, tick +768.</td></tr>
+              <tr><td>C1</td><td>Does a long chain keep its theme.</td><td>Theme drift 0, retention 1.0, on that protocol.</td></tr>
+              <tr><td>U5</td><td>Cost, once an accuracy floor holds.</td><td>Marked secondary. Public summary: on-topic 0.90, prefill ratio 0.291.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A browser walkthrough of U2, U3, and U4 remains at the <a href="/playground/">proof playground</a>. It replays the laboratory narrative. It is not an independent reproduction.</p>
+      </section>
+      <section id="limits">
+        <h2>Limits</h2>
+        <div class="note">
+          <p>The public mirror explicitly does not claim a LoCoMo or LongMemEval win, or that Valhalla replaces a transformer.</p>
+          <p>On 27 June 2026, a progress snapshot reported that its holdout session snapshot did not exceed cold retrieval, and treated that as evidence against reading the runtime as a fine-tune substitute. July records add formation, topology, training, and unique-proof measurements. They are later, and they are different protocols.</p>
+          <p>Multiple choice still depends on the model head in the numbers cited above. The runtime and this documentation mirror are proprietary. Reproduction commands point at the licensed engineering checkout, not at this website.</p>
+        </div>
+      </section>
+      <section id="docs">
+        <h2>Documents and collaboration</h2>
+        <ul>
+          <li><a href="https://rogue-intelligence-inc.github.io/valhalla-unified-core/">Technical mirror</a> — protocols, reports, and the earlier single-project page.</li>
+          <li><a href="https://github.com/Rogue-Intelligence-INC/Valhalla">Valhalla repository</a></li>
+          <li><a href="/evidence/">Evidence catalog</a></li>
+          <li><a href="/contact/">Research collaboration, technical evaluation, a product trial, or a license</a></li>
+        </ul>
+        <h3>Sources read for this page</h3>
+        <ul class="sources">
+          <li>Public mirror README and <code>PROOF_SCORECARD.md</code>, 14 July 2026, fast mode.</li>
+          <li><code>PRODUCT_ARCHITECTURE_20260714.md</code>, <code>INTRODUCTION.md</code> v1.1, <code>VALHALLA_BASE_PLATFORM.md</code> v2.1 (30 June 2026).</li>
+          <li><code>PROGRESS_SNAPSHOT_20260627.md</code> for the holdout bound.</li>
+          <li><code>valhalla-lift-desktop</code> <code>app.py</code>, <code>i18n.py</code>, and <code>lift_engine.py</code> for the shell. Interface metric strings in that build were not used.</li>
+        </ul>
+      </section>
+    </article>
+  </div>
+</main>
 
-    <main id="main" class="page">
-      <article class="wrap article">
-        
-        <p class="kicker">Primary research line</p>
-        
-        <h1>Valhalla</h1>
-<p class="lede">
-  <strong>Valhalla</strong> is an adaptive runtime for <em>persistent</em> AI agents:
-<p>  structural state lives <strong>outside</strong> the language model and is used to   control retrieval, abstention, pollution recovery, and backbone-independent paths.   The LM remains an optional decode head.</p>
-</p>
-<div class="meta-row">
-  <div class="meta-box"><span class="label">Priority</span><span class="value">Primary</span></div>
-  <div class="meta-box"><span class="label">SKU</span><span class="value">ValhallaBase runtime</span></div>
-  <div class="meta-box"><span class="label">Company</span><span class="value">Rogue Intelligence</span></div>
-  <div class="meta-box"><span class="label">Contact</span><span class="value">licensing@…</span></div>
-</div>
-<p class="toc">
-  <a href="#problem">Problem</a>
-  <a href="#approach">Approach</a>
-  <a href="#proofs">Proofs</a>
-  <a href="#offers">Offers</a>
-  <a href="#bounds">Bounds</a>
-</p>
-<h2 id="problem">Problem</h2>
-<p>Once agents leave chat demos and write to CRM, calendars, code, or APIs, three failures destroy trust:</p>
-<p>1. <strong>State drift</strong> across long sessions   2. <strong>Context pollution</strong> that continues to drive later actions   3. <strong>False action</strong> when the system should refuse  </p>
-<p>Memory products optimize <em>extract → store → retrieve → inject</em>. They do not automatically answer whether bad context poisoned the session, whether to act, or what survives an LM swap.</p>
-<h2 id="approach">Approach</h2>
-<table>
-<tr><th>Component</th><th>Role</th></tr>
-<tr><td>Structural body</td><td>Persistent incubation state (Hub / Tile / Stem / Fate lineage)</td></tr>
-<tr><td>Gates</td><td>Emit / abstain / defer when evidence is thin</td></tr>
-<tr><td>Recovery</td><td>Re-anchor after polluted retrieval without requiring LM fine-tune</td></tr>
-<tr><td>Optional LM head</td><td>Swappable decode; not the sole source of truth</td></tr>
-</table>
-<p><strong>Commercial frame (cash):</strong> Agent Reliability & State Recovery — fixed-scope Audit, 14-day Pilot, Design Partner.   Do not lead diligence with Triad jargon; lead with failure modes and measurable batteries.</p>
-<h2 id="proofs">Citeable Unique Proofs (lab)</h2>
-<p>Protocol family: <code>unique-proof-suite-v1</code>. These are <strong>mechanism differentiators</strong>, not LoCoMo SOTA claims.</p>
-<table>
-<tr><th>ID</th><th>Claim</th><th>Lead metric</th></tr>
-<tr><td>U3</td><td>Pollution rescue without LM fine-tune</td><td><strong>+38.7 pp</strong> vs polluted session</td></tr>
-<tr><td>U2</td><td>Fate-gated abstain / proactive</td><td>MAR <strong>1.0</strong> · FIR <strong>0.0</strong></td></tr>
-<tr><td>U4</td><td>Backbone-orthogonal structure path</td><td><code>VALHALLA_BASE_INDEPENDENT</code></td></tr>
-<tr><td>U1</td><td>Non-isolated multimodal body</td><td>shared ≈ <strong>0.9999</strong> vs iso ≈ <strong>0.968</strong></td></tr>
-<tr><td>U5</td><td>Cost at accuracy floor</td><td>on-topic <strong>0.90</strong> · prefill ratio <strong>0.291</strong></td></tr>
-</table>
-<p>Trainability (diligence): L1 session structure · L2 Fate pretrain holdout · L3 controlled bake (Δw / MCQ delta).   Customer cash requires <strong>Layer-C</strong> re-measurement on the buyer’s traces (paid Audit).</p>
-<h2 id="offers">Near-term offers</h2>
-<table>
-<tr><th>Offer</th><th>Design-partner note</th></tr>
-<tr><td>Agent Reliability Audit (5 days)</td><td>$3,000 DP · $5,000 public · paid at kickoff</td></tr>
-<tr><td>Recovery Pilot (14 days)</td><td>$15,000 · 50% at kickoff</td></tr>
-<tr><td>Design Partner (6 weeks)</td><td>$25,000–$40,000</td></tr>
-</table>
-<div class="cta-row">
-  <a class="btn solid" href="mailto:licensing@rogue-intelligence.com?subject=Valhalla%20Reliability%20Audit">Request Audit</a>
-  <a class="btn" href="/proofs/">Unique Proofs</a>
-  <a class="btn" href="/playground/">Try playground</a>
-  <a class="btn" href="/about/">Author &amp; financing</a>
-</div>
-<h2 id="bounds">Honest bounds</h2>
-<div class="notice">
-<p>  We do <strong>not</strong> claim LoCoMo / LongMemEval SOTA versus Mem0, AGI,   or a drop-in Transformer replacement. Peer Unique Proofs prefer</p>
-  <code>SKIP_NO_*</code> over invented comparator scores. Lab metrics are not
-<p>  substitutes for a customer Audit.</p>
-</div>
-<h2>Related lines</h2>
-<ul>
-<li>- Secondary: <a href="/cryptography/">Cryptography — Yaksha Cipher</a>  </li>
-<li>- Secondary: <a href="/wave/">Wave language / Val-OS</a>  </li>
-</ul>
-<p>Monorepo materials (for authorized diligence): <code>docs/gtm/</code>, <code>docs/valhalla/papers/Valhalla_Reliability_Proof_System.md</code>, Proof Playground via <code>./scripts/run_proof_playground.sh</code>.</p>
-      </article>
-    </main>
-
-    <footer class="site-footer">
-  <div class="wrap footer-inner">
+<footer class="colophon">
+  <div class="frame colophon-inner">
     <div>
-      <strong>Rogue Intelligence</strong><br>
-      Self-funded independent R&D · Primary line: Valhalla
+      <strong>Rogue Intelligence Inc.</strong><br>
+      Independent research in intelligence, mathematics, cryptography, and computing systems.
     </div>
-    <div class="footer-links">
-      <a href="/about/">Author · financing · gifts</a>
-      <a href="mailto:licensing@rogue-intelligence.com">licensing@rogue-intelligence.com</a>
-    </div>
-    <div class="footer-note">
-      © 2026 Rogue Intelligence. Scientific / technical materials. Not investment advice.
-    </div>
+    <nav aria-label="Footer">
+      <a href="/projects/">Projects</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="/research/">Research</a>
+      <a href="https://rogue-intelligence-inc.github.io/valhalla-unified-core/">Valhalla technical mirror</a>
+    </nav>
+    <nav aria-label="Repositories">
+      <a href="https://github.com/Rogue-Intelligence-INC/Valhalla">Valhalla</a>
+      <a href="https://github.com/Rogue-Intelligence-INC/Wave">Wave</a>
+      <a href="https://github.com/Rogue-Intelligence-INC/val-crypt">Val-Crypt</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <p class="fine">© 2026 Rogue Intelligence Inc. Laboratory records and technical notes. Internal tests are labeled as such. This site is not a certification, a peer-reviewed journal, or an offer of securities.</p>
   </div>
 </footer>
-
-  </body>
+<script src="/assets/js/site.js"></script>
+</body>
 </html>

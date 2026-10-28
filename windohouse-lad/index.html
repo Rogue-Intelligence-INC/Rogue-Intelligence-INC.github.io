@@ -1,86 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Minimal lab notebook front door — outreach and theory cross-checks.">
-    <link rel="canonical" href="https://rogue-intelligence-inc.github.io/windohouse-lad/">
-    <title>Windohouse Lad · Rogue Intelligence</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    
-  </head>
-  <body class="page-about">
-    <a class="skip-link" href="#main">Skip to content</a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Windohouse Lad · Rogue Intelligence Inc.</title>
+  <meta name="description" content="Archival notebook URL. The mathematical research line is S-WIND.">
+  <link rel="canonical" href="https://rogue-intelligence-inc.github.io/windohouse-lad/">
+  <meta property="og:title" content="Windohouse Lad · Rogue Intelligence Inc.">
+  <meta property="og:description" content="Archival notebook URL. The mathematical research line is S-WIND.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rogue-intelligence-inc.github.io/windohouse-lad/">
+  
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>
+try {
+  var t = localStorage.getItem("ri-theme");
+  if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  else if (matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.setAttribute("data-theme", "dark");
+} catch (e) {}
+</script>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="/">
-      <span class="brand-name">Rogue Intelligence</span>
-      <span class="brand-mark">Independent research · since 2025-04-05</span>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="frame mast-inner">
+    <a class="mark" href="/">
+      <span class="mark-name">Rogue Intelligence</span>
+      <span class="mark-sub">Research &amp; Computing</span>
     </a>
-    <nav class="site-nav" aria-label="Primary">
-      
-      <a href="/">Overview</a>
-      
-      <a href="/valhalla/">Valhalla</a>
-      
-      <a href="/proofs/">Proofs</a>
-      
-      <a href="/cryptography/">Cryptography</a>
-      
-      <a href="/wave/">Wave</a>
-      
-      <a href="/about/" class="active">About</a>
-      
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+    <nav id="site-nav" class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/projects/">Projects</a><a href="/research/">Research</a><a href="/evidence/">Evidence</a><a href="/about/">About</a><a href="/contact/">Contact</a>
     </nav>
+    <button class="theme" type="button" data-theme-toggle aria-pressed="false">Dark</button>
   </div>
 </header>
 
+<main id="main">
+  <header class="page-head">
+    <div class="frame">
+      <p class="eyebrow">Archival notebook</p>
+      <h1>Windohouse Lad</h1>
+      <p class="deck">An older front door for theory notes and outreach logs around a spiral and φ-algebra lineage. It is kept so the URL still resolves. It is not the S-WIND manuscript.</p>
+    </div>
+  </header>
+  <section class="section">
+    <div class="frame prose">
+      <p>For the mathematical research line, read <a href="/s-wind/">S-WIND</a>. For the laboratory index, start at the <a href="/">homepage</a>.</p>
+    </div>
+  </section>
+</main>
 
-    <main id="main" class="page">
-      <article class="wrap article">
-        
-        <p class="kicker">Lab notebook (archival)</p>
-        
-        <h1>Windohouse Lad</h1>
-<p class="lede">
-<p>  Archival lab–notebook front door for theory cross-checks and outreach logs   around the spiral / φ-algebra lineage. For the current public laboratory site,   start at the <a href="/">Overview</a>.</p>
-</p>
-<h2>Role</h2>
-<ul>
-<li>- Bridge between raw theory notes and concrete checks  </li>
-<li>- Logbook for scientific outreach attempts  </li>
-<li>- Pointer page for future public attachments  </li>
-</ul>
-<h2>Prefer these pages</h2>
-<table>
-<tr><th>Priority</th><th>Page</th></tr>
-<tr><td>Primary</td><td><a href="/valhalla/">Valhalla</a></td></tr>
-<tr><td>Author</td><td><a href="/about/">About</a></td></tr>
-<tr><td>Secondary</td><td><a href="/cryptography/">Cryptography</a> · <a href="/wave/">Wave</a></td></tr>
-</table>
-<p class="small muted">Kept for URL continuity. Language remains technical and concise.</p>
-      </article>
-    </main>
-
-    <footer class="site-footer">
-  <div class="wrap footer-inner">
+<footer class="colophon">
+  <div class="frame colophon-inner">
     <div>
-      <strong>Rogue Intelligence</strong><br>
-      Self-funded independent R&D · Primary line: Valhalla
+      <strong>Rogue Intelligence Inc.</strong><br>
+      Independent research in intelligence, mathematics, cryptography, and computing systems.
     </div>
-    <div class="footer-links">
-      <a href="/about/">Author · financing · gifts</a>
-      <a href="mailto:licensing@rogue-intelligence.com">licensing@rogue-intelligence.com</a>
-    </div>
-    <div class="footer-note">
-      © 2026 Rogue Intelligence. Scientific / technical materials. Not investment advice.
-    </div>
+    <nav aria-label="Footer">
+      <a href="/projects/">Projects</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="/research/">Research</a>
+      <a href="https://rogue-intelligence-inc.github.io/valhalla-unified-core/">Valhalla technical mirror</a>
+    </nav>
+    <nav aria-label="Repositories">
+      <a href="https://github.com/Rogue-Intelligence-INC/Valhalla">Valhalla</a>
+      <a href="https://github.com/Rogue-Intelligence-INC/Wave">Wave</a>
+      <a href="https://github.com/Rogue-Intelligence-INC/val-crypt">Val-Crypt</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <p class="fine">© 2026 Rogue Intelligence Inc. Laboratory records and technical notes. Internal tests are labeled as such. This site is not a certification, a peer-reviewed journal, or an offer of securities.</p>
   </div>
 </footer>
-
-  </body>
+<script src="/assets/js/site.js"></script>
+</body>
 </html>

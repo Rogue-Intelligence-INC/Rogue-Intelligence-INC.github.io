@@ -1,122 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Yaksha Cipher — auditable, hardware-aware symmetric encryption research under Rogue Intelligence.">
-    <link rel="canonical" href="https://rogue-intelligence-inc.github.io/cryptography/">
-    <title>Cryptography · Rogue Intelligence</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    
-  </head>
-  <body class="page-cryptography">
-    <a class="skip-link" href="#main">Skip to content</a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yaksha · cryptographic research · Rogue Intelligence Inc.</title>
+  <meta name="description" content="Yaksha is an experimental symmetric cipher. Statistical tests are reported with failures. Val-Crypt is a separate construction.">
+  <link rel="canonical" href="https://rogue-intelligence-inc.github.io/cryptography/">
+  <meta property="og:title" content="Yaksha · cryptographic research · Rogue Intelligence Inc.">
+  <meta property="og:description" content="Yaksha is an experimental symmetric cipher. Statistical tests are reported with failures. Val-Crypt is a separate construction.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rogue-intelligence-inc.github.io/cryptography/">
+  
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>
+try {
+  var t = localStorage.getItem("ri-theme");
+  if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  else if (matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.setAttribute("data-theme", "dark");
+} catch (e) {}
+</script>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="/">
-      <span class="brand-name">Rogue Intelligence</span>
-      <span class="brand-mark">Independent research · since 2025-04-05</span>
+</head>
+<body data-line="yaksha">
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="frame mast-inner">
+    <a class="mark" href="/">
+      <span class="mark-name">Rogue Intelligence</span>
+      <span class="mark-sub">Research &amp; Computing</span>
     </a>
-    <nav class="site-nav" aria-label="Primary">
-      
-      <a href="/">Overview</a>
-      
-      <a href="/valhalla/">Valhalla</a>
-      
-      <a href="/proofs/">Proofs</a>
-      
-      <a href="/cryptography/" class="active">Cryptography</a>
-      
-      <a href="/wave/">Wave</a>
-      
-      <a href="/about/">About</a>
-      
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+    <nav id="site-nav" class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/projects/">Projects</a><a href="/research/">Research</a><a href="/evidence/">Evidence</a><a href="/about/">About</a><a href="/contact/">Contact</a>
     </nav>
+    <button class="theme" type="button" data-theme-toggle aria-pressed="false">Dark</button>
   </div>
 </header>
 
+<main id="main">
+  <header class="page-head">
+    <div class="frame">
+      <p class="eyebrow">03 / Research · Cryptographic systems</p>
+      <h1>Yaksha</h1>
+      <p class="deck">Experimental symmetric encryption: a deterministic primitive, parameters derived from the key, a neural-inspired mode, and a stateful authenticated wrapper. It is not a certified product, and it is not Val-Crypt.</p>
+      <p class="small"><span class="tag">Crate 1.0.0</span><span class="tag">Proprietary</span><span class="tag">Not a security proof</span></p>
+    </div>
+  </header>
+  <div class="frame dossier">
+    <nav class="toc" aria-label="On this page">
+      <a href="#question">Question</a>
+      <a href="#idea">How it is arranged</a>
+      <a href="#ocean">Ocean</a>
+      <a href="#experiments">Tests</a>
+      <a href="#valcrypt">Val-Crypt</a>
+      <a href="#limits">Limits</a>
+      <a href="#docs">Documents</a>
+    </nav>
+    <article class="prose">
+      <section id="question">
+        <h2>Research question</h2>
+        <p>Can a parameterized symmetric construction separate a reversible transform, a session, and an integrity tag — and what do statistical batteries actually say about the bytes it emits?</p>
+      </section>
+      <section id="idea">
+        <h2>How the crate is arranged</h2>
+        <p>The library comment in <code>yaksha-cipher</code> 1.0.0 describes three layers. A stateful key derivation function differentiates sessions. The encryption primitive is deterministic: the same key and the same plaintext produce the same ciphertext at that layer. A MAC binds ciphertext and associated data. The public surface names four modes: <code>core</code>, <code>parametric</code> (parameters taken from the key), <code>neural</code> (described as MeshBrain-inspired), and <code>aead</code> (<code>YakshaAead</code>).</p>
+        <ol class="stack">
+          <li><span>1</span><strong>YakshaKdf</strong><p>Session material. Uniqueness is a protocol property, not a property of the bare primitive.</p></li>
+          <li><span>2</span><strong>Primitive</strong><p>Core, parametric, or neural transform. The crate also contains vector and geometric modules marked legacy or experimental.</p></li>
+          <li><span>3</span><strong>YakshaMac</strong><p>Authentication on decrypt. A failed tag is an integrity failure, not a decryption of a different message.</p></li>
+        </ol>
+        <p>The crate manifest depends on Rayon, so the parallel work in this version is CPU-side. It does not depend on a GPU toolkit. Throughput claims that require a GPU are not made on this page.</p>
+        <p>The README states avalanche and key sensitivity of about 50%. Those are diffusion measurements reported by the project. They are not a security reduction.</p>
+      </section>
+      <section id="ocean">
+        <h2>Ocean</h2>
+        <p><code>ocean_pipeline.rs</code> is a two-phase wrapper around a cipher body. Encrypt applies ocean phase one, then the body, then ocean phase two. Decrypt reverses that order. A session anchor is derived from the key. The wrapper is part of Yaksha. It is not the Val-Crypt paper.</p>
+      </section>
+      <section id="experiments">
+        <h2>The Dieharder record</h2>
+        <p>File <code>DIEHARDER_REPORT.md</code>, 31 January 2026, dieharder 3.31.1, 50 MB per test.</p>
+        <div class="table-wrap">
+          <table>
+            <caption>Randomness of ciphertext under the stated inputs. Not a cryptanalysis.</caption>
+            <thead><tr><th>Mode</th><th>Input</th><th>Reported result</th></tr></thead>
+            <tbody>
+              <tr><td>Neural</td><td>Random plaintext</td><td>49/54 passed. Weak: diehard_opso, diehard_craps, one sts_serial width. Failed: marsaglia_tsang_gcd, both repetitions.</td></tr>
+              <tr><td>Parametric, core</td><td>Random plaintext</td><td>About 90%, with the same GCD test as the consistent failure.</td></tr>
+              <tr><td>Core</td><td>Sequential bytes</td><td>About 18%. The report says residual structure survives the cascade.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The report itself notes that random plaintext already carries entropy, so a pass on random input is a weaker statement than a pass on structured input. The sequential failure is the more informative row. No PractRand log was in the folder. No June 2026 Yaksha statistical report was found there; the dated randomness record is 31 January.</p>
+      </section>
+      <section id="valcrypt">
+        <h2>Val-Crypt is a different construction</h2>
+        <p>Val-Crypt is a separate public repository. Its README describes two reversible modes that share a cascade. Vector mode treats 4 bytes as a 4-dimensional vector and applies ARX quarter-rounds. Entropy mode chooses a per-byte transform from a deterministic entropy path, using odd multiplication so the step stays invertible modulo 256. The README reports, as author measurements, avalanche of 50.7% and 53.6%, and throughput of 885 MB/s and 888 MB/s. A January 2026 note in the private tree is a technical manuscript of that design. It is not peer reviewed on this site.</p>
+        <p>Some files inside the local <code>yaksha-cipher</code> directory are titled as Val-Crypt reports, including a scientific report dated 31 January 2026 that discusses prefix leakage, deterministic encryption, and a two-round ARX schedule. Those findings belong to that Val-Crypt write-up. They are not relabeled here as Yaksha results, and the two systems are not merged into one algorithm.</p>
+        <p><a href="https://github.com/Rogue-Intelligence-INC/val-crypt">Val-Crypt repository</a>. License stated there: MIT.</p>
+      </section>
+      <section id="limits">
+        <h2>Limits</h2>
+        <div class="note">
+          <p>No independent cryptanalysis is claimed. A Dieharder pass is not a proof of confidentiality, authenticity, or misuse resistance. The crate is proprietary (<code>LicenseRef-Proprietary-Rogue-Intelligence-LNC</code>, <code>publish = false</code>). The repository URL in the manifest returned 404 when this page was written, so no public source link is offered for Yaksha.</p>
+          <p>The construction is not presented as FIPS validated, or as a replacement for a standardized AEAD.</p>
+        </div>
+      </section>
+      <section id="docs">
+        <h2>Collaboration</h2>
+        <p>Appropriate work is implementation review, an independent randomness battery on structured plaintexts, or a cryptanalysis that is allowed to fail. Licensing of the proprietary crate is a separate request. <a href="/contact/">Contact</a>.</p>
+        <h3>Sources read for this page</h3>
+        <ul class="sources">
+          <li>Local <code>yaksha-cipher</code> 1.0.0: <code>README.md</code>, <code>Cargo.toml</code>, <code>src/lib.rs</code>, <code>src/ocean_pipeline.rs</code>, <code>DIEHARDER_REPORT.md</code>.</li>
+          <li>Public Val-Crypt README. Local Val-Crypt notes were used only to keep the two projects apart.</li>
+        </ul>
+      </section>
+    </article>
+  </div>
+</main>
 
-    <main id="main" class="page">
-      <article class="wrap article">
-        
-        <p class="kicker">Secondary research line</p>
-        
-        <h1>Cryptography — Yaksha Cipher</h1>
-<p class="lede">
-  <strong>Yaksha Cipher</strong> is a <em>separate product line</em> from ValhallaBase:
-<p>  a Rust-centered symmetric encryption research stack emphasizing parameterized transforms,   stateful AEAD, and — in the GPU-oriented line — auditable, hardware-adaptive throughput   with reproducibility gates.</p>
-</p>
-<div class="meta-row">
-  <div class="meta-box"><span class="label">Priority</span><span class="value">Secondary</span></div>
-  <div class="meta-box"><span class="label">SKU</span><span class="value">Yaksha Cipher</span></div>
-  <div class="meta-box"><span class="label">Relation</span><span class="value">Stack sibling</span></div>
-  <div class="meta-box"><span class="label">Stage</span><span class="value">Research / alpha</span></div>
-</div>
-<p class="toc">
-  <a href="#role">Role</a>
-  <a href="#capabilities">Capabilities</a>
-  <a href="#honesty">Honesty</a>
-</p>
-<h2 id="role">Role in the laboratory</h2>
-<table>
-<tr><th></th><th>Valhalla (primary)</th><th>Yaksha (this page)</th></tr>
-<tr><td>Job</td><td>Agent reliability runtime</td><td>Encryption substrate</td></tr>
-<tr><td>Buyer narrative</td><td>State · abstain · recover</td><td>Auditability · throughput · sovereignty</td></tr>
-<tr><td>Dependency</td><td>Optional LM decode</td><td>Independent crypto SKU</td></tr>
-</table>
-<p>Shared institutional home: Rogue Intelligence. Shared engineering authorship. <strong>Distinct roadmaps</strong> — do not evaluate Yaksha as “AI memory,” and do not evaluate Valhalla as “AES replacement.”</p>
-<h2 id="capabilities">Capabilities (public framing)</h2>
-<p>From the library and investor-technical materials:</p>
-<ul>
-<li>- <strong>Core / parametric / neural-inspired modes</strong> plus <strong>AEAD</strong> (<code>YakshaAead</code>) in the Rust crate surface  </li>
-<li>- Research emphasis on <strong>reproducible verification</strong> (bit-exact / tagged gates) rather than badge theater  </li>
-<li>- GPU-oriented adaptive-mask line aimed at high-throughput, sovereignty-sensitive data-in-motion  </li>
-</ul>
-<div class="callout">
-  <strong>Positioning:</strong> infrastructure for auditable encryption under sovereign compute —
-<p>  not “another undifferentiated crypto crate” marketing claim, and not FIPS theater.</p>
-</div>
-<h2 id="honesty">Honest boundaries</h2>
-<div class="notice">
-  <ul>
-    <li>Not presented here as FIPS / CAVP certified.</li>
-    <li>Not claimed as a drop-in AES-GCM replacement for all production secrets <em>today</em>.</li>
-    <li>Security claims require independent cryptanalysis; this page is a scientific index, not a certification.</li>
-    <li>Proprietary research line — redistribution and production licensing by written arrangement.</li>
-  </ul>
-</div>
-<h2>Documents</h2>
-<ul>
-<li>- Monorepo: <code>valhalla-crypto/yaksha-cipher/</code>  </li>
-<li>- Investor BP (authorized): <code>docs/YAKSHA_BP_EN_INVESTOR.md</code>  </li>
-<li>- Primary product (for AI agents): <a href="/valhalla/">Valhalla</a>  </li>
-</ul>
-<div class="cta-row">
-  <a class="btn" href="mailto:licensing@rogue-intelligence.com?subject=Yaksha%20Cipher">Cryptography contact</a>
-  <a class="btn" href="/valhalla/">Back to Valhalla</a>
-</div>
-      </article>
-    </main>
-
-    <footer class="site-footer">
-  <div class="wrap footer-inner">
+<footer class="colophon">
+  <div class="frame colophon-inner">
     <div>
-      <strong>Rogue Intelligence</strong><br>
-      Self-funded independent R&D · Primary line: Valhalla
+      <strong>Rogue Intelligence Inc.</strong><br>
+      Independent research in intelligence, mathematics, cryptography, and computing systems.
     </div>
-    <div class="footer-links">
-      <a href="/about/">Author · financing · gifts</a>
-      <a href="mailto:licensing@rogue-intelligence.com">licensing@rogue-intelligence.com</a>
-    </div>
-    <div class="footer-note">
-      © 2026 Rogue Intelligence. Scientific / technical materials. Not investment advice.
-    </div>
+    <nav aria-label="Footer">
+      <a href="/projects/">Projects</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="/research/">Research</a>
+      <a href="https://rogue-intelligence-inc.github.io/valhalla-unified-core/">Valhalla technical mirror</a>
+    </nav>
+    <nav aria-label="Repositories">
+      <a href="https://github.com/Rogue-Intelligence-INC/Valhalla">Valhalla</a>
+      <a href="https://github.com/Rogue-Intelligence-INC/Wave">Wave</a>
+      <a href="https://github.com/Rogue-Intelligence-INC/val-crypt">Val-Crypt</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <p class="fine">© 2026 Rogue Intelligence Inc. Laboratory records and technical notes. Internal tests are labeled as such. This site is not a certification, a peer-reviewed journal, or an offer of securities.</p>
   </div>
 </footer>
-
-  </body>
+<script src="/assets/js/site.js"></script>
+</body>
 </html>

@@ -1,123 +1,178 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Wave language and Val-OS — Fate-controlled runtime experiments in the Rogue Intelligence stack.">
-    <link rel="canonical" href="https://rogue-intelligence-inc.github.io/wave/">
-    <title>Wave · Rogue Intelligence</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    
-  </head>
-  <body class="page-wave">
-    <a class="skip-link" href="#main">Skip to content</a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wave · rule-driven computing · Rogue Intelligence Inc.</title>
+  <meta name="description" content="Wave translates intent and rule combinations into machine behavior, with three alpha compilers.">
+  <link rel="canonical" href="https://rogue-intelligence-inc.github.io/wave/">
+  <meta property="og:title" content="Wave · rule-driven computing · Rogue Intelligence Inc.">
+  <meta property="og:description" content="Wave translates intent and rule combinations into machine behavior, with three alpha compilers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rogue-intelligence-inc.github.io/wave/">
+  
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>
+try {
+  var t = localStorage.getItem("ri-theme");
+  if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  else if (matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.setAttribute("data-theme", "dark");
+} catch (e) {}
+</script>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="/">
-      <span class="brand-name">Rogue Intelligence</span>
-      <span class="brand-mark">Independent research · since 2025-04-05</span>
+</head>
+<body data-line="wave">
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="frame mast-inner">
+    <a class="mark" href="/">
+      <span class="mark-name">Rogue Intelligence</span>
+      <span class="mark-sub">Research &amp; Computing</span>
     </a>
-    <nav class="site-nav" aria-label="Primary">
-      
-      <a href="/">Overview</a>
-      
-      <a href="/valhalla/">Valhalla</a>
-      
-      <a href="/proofs/">Proofs</a>
-      
-      <a href="/cryptography/">Cryptography</a>
-      
-      <a href="/wave/" class="active">Wave</a>
-      
-      <a href="/about/">About</a>
-      
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+    <nav id="site-nav" class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/projects/">Projects</a><a href="/research/">Research</a><a href="/evidence/">Evidence</a><a href="/about/">About</a><a href="/contact/">Contact</a>
     </nav>
+    <button class="theme" type="button" data-theme-toggle aria-pressed="false">Dark</button>
   </div>
 </header>
 
+<main id="main">
+  <header class="page-head">
+    <div class="frame">
+      <p class="eyebrow">04 / Research · Rule-driven computing</p>
+      <h1>Wave</h1>
+      <p class="deck">A language that writes intent and combinations of rules. The compiler translates those combinations into machine behavior: an instruction, a call, a loop, a system call, or a GPU kernel.</p>
+      <p class="small"><span class="tag">Public language definition</span><span class="tag">Three alpha compilers</span><span class="tag">MIT</span></p>
+    </div>
+  </header>
+  <div class="frame dossier">
+    <nav class="toc" aria-label="On this page">
+      <a href="#question">Question</a>
+      <a href="#idea">The translation</a>
+      <a href="#rules">Rules</a>
+      <a href="#compilers">Three compilers</a>
+      <a href="#gpu">GPU path</a>
+      <a href="#program">A program</a>
+      <a href="#limits">Limits</a>
+      <a href="#docs">Documents</a>
+    </nav>
+    <article class="prose">
+      <section id="question">
+        <h2>Research question</h2>
+        <p>Can machine behavior be specified as a combination of a small rule field, instead of as a list of instructions the programmer already chose?</p>
+      </section>
+      <section id="idea">
+        <h2>The translation</h2>
+        <p>The public Wave repository states the definition directly. A program writes intent and rule combinations, not one instruction at a time. Rules combine, the combination is translated, and the result is concrete behavior. The field has three parameters: <code>i</code> information density, <code>e</code> entropy gradient, and <code>r</code> relation strength.</p>
+        <ol class="flow" aria-label="Wave translation">
+          <li><span>Source</span><strong>Intent</strong><p><code>out</code>, <code>fn</code>, <code>when</code>, <code>loop</code>, assignment, <code>unified</code>.</p></li>
+          <li><span>Field</span><strong>i, e, r</strong><p>Three parameters. The compilers accept them as a <code>unified</code> block.</p></li>
+          <li><span>Rules</span><strong>Combine</strong><p>Eight rules, derived from the field, compose.</p></li>
+          <li><span>Lower</span><strong>Behavior</strong><p>x86-64, a system call, or an OpenCL-mapped kernel.</p></li>
+        </ol>
+      </section>
+      <section id="rules">
+        <h2>The eight rules</h2>
+        <p>Copied from the public language README, including the stated derivation. This is the language’s model of itself.</p>
+        <div class="table-wrap">
+          <table>
+            <caption>Unified-field rules as published.</caption>
+            <thead><tr><th>Rule</th><th>Meaning in the README</th><th>Derived from</th></tr></thead>
+            <tbody>
+              <tr><td>gravitational</td><td>Attraction, aggregation</td><td>i</td></tr>
+              <tr><td>tension</td><td>Comparison, branching</td><td>r</td></tr>
+              <tr><td>entropy</td><td>Computation, transformation</td><td>e</td></tr>
+              <tr><td>connection</td><td>Data transfer, linking</td><td>r</td></tr>
+              <tr><td>memory</td><td>Storage, persistence</td><td>i</td></tr>
+              <tr><td>orbital</td><td>Loops, cycles</td><td>r + e</td></tr>
+              <tr><td>boundary</td><td>Scope, isolation</td><td>1 − e</td></tr>
+              <tr><td>evolution</td><td>Adaptation, transformation</td><td>e</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The same page gives four lowerings: <code>mov = gravitational + connection</code>, <code>add = entropy + gravitational</code>, <code>call = connection + boundary</code>, <code>loop = orbital + tension</code>. GPU combinations are stated the same way: orbital with entropy for vector operations, gravitational for a reduction, entropy with gravitational for a dot product, orbital with orbital for a matrix product.</p>
+      </section>
+      <section id="compilers">
+        <h2>Three compilers, three jobs</h2>
+        <p>All three public repositories are marked Alpha Test 1.0. They implement a shared surface: variables, arithmetic, comparisons, <code>when</code>, <code>loop</code>, functions, <code>out</code>, <code>syscall.exit</code>, and <code>unified { i, e, r }</code>. Wave-C and the assembly compilers also document Fate on/off.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Artifact</th><th>What it is</th><th>What the README shows</th></tr></thead>
+            <tbody>
+              <tr><td><a href="https://github.com/Rogue-Intelligence-INC/wave-c">Wave-C</a></td><td>Reference compiler in C.</td><td><code>gcc -o wavec src/wave5.c</code>. Documents a Fate scheduler and four tile-memory pools named BlackHole, MeshBrain, MultiNova, and BaseForce. Those pool names are not the Valhalla ingress cycle.</td></tr>
+              <tr><td><a href="https://github.com/Rogue-Intelligence-INC/wave-asm">Wave-ASM</a></td><td>The compiler written in x86-64 assembly.</td><td>NASM to an ELF64 binary, about 15 KB, syscalls only, no libc. Emits ELF64 for the user program.</td></tr>
+              <tr><td><a href="https://github.com/Rogue-Intelligence-INC/wave-bin">Wave-BIN</a></td><td>The compiler as a raw binary, no operating system required.</td><td><code>nasm -f bin</code>, 8 KB. Header magic <code>WAVE</code>, version 1, entry offset. A loader maps it and calls <code>compile</code> at offset 16.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id="gpu">
+        <h2>GPU path</h2>
+        <p>The Wave repository describes <code>wave/gpu/host/</code> as the GPU line: rules lowered to OpenCL, with <code>wave_gpu_host</code> and a <code>gpu.rule</code> task syntax. The documented invocation is <code>gpu on</code>, a <code>unified</code> block, then <code>gpu.rule orbital entropy op add size 256</code>. A cross-language harness is described for a 10-million-iteration scalar loop against C and Python. The README does not print the timings, so this page does not invent them.</p>
+      </section>
+      <section id="program">
+        <h2>A program</h2>
+        <p>From the public README, unchanged:</p>
+        <pre><code>fn add a b {
+    -> a + b
+}
 
-    <main id="main" class="page">
-      <article class="wrap article">
-        
-        <p class="kicker">Secondary research line</p>
-        
-        <h1>Wave Language & Val-OS</h1>
-<p class="lede">
-  <strong>Wave</strong> is a systems language / runtime lineage in this laboratory:
-<p>  compilation toward native code, Fate-centered control, and Quattro-style memory pools.</p>
-  <strong>Val-OS</strong> experiments host desktop and organizer demos on that substrate.
-<p>  This line is <em>secondary</em> to Valhalla for commercial AI-agent reliability.</p>
-</p>
-<div class="meta-row">
-  <div class="meta-box"><span class="label">Priority</span><span class="value">Secondary</span></div>
-  <div class="meta-box"><span class="label">Artifacts</span><span class="value">Wave · Val-OS</span></div>
-  <div class="meta-box"><span class="label">Relation</span><span class="value">Runtime lineage</span></div>
-  <div class="meta-box"><span class="label">Stage</span><span class="value">Experimental</span></div>
-</div>
-<p class="toc">
-  <a href="#wave">Wave</a>
-  <a href="#valos">Val-OS</a>
-  <a href="#link">Link to Valhalla</a>
-</p>
-<h2 id="wave">Wave</h2>
-<p>Public technical framing (from laboratory manuals):</p>
-<table>
-<tr><th>Property</th><th>Description</th></tr>
-<tr><td>Aim</td><td>Systems language with Fate autonomy and hybrid UI surfaces</td></tr>
-<tr><td>Compilation</td><td>Toward native (x86-64 ELF64 in documented v4 manuals)</td></tr>
-<tr><td>Memory idea</td><td>Fate + Quattro pools (capacity / association / parallel / base)</td></tr>
-<tr><td>Role</td><td>Experimental substrate and conceptual ancestor — not the ValhallaBase sales SKU</td></tr>
-</table>
-<p>Wave documents live in monorepo trees such as <code>wave-v4-backup/docs/WAVE_LANGUAGE_MANUAL.md</code> and related <code>wave/</code> toolchains.</p>
-<h2 id="valos">Val-OS</h2>
-<p><strong>Val-OS</strong> packages Wave runtime ideas into OS-shaped experiments:</p>
-<ul>
-<li>- Fate as a central decision engine (scheduling, allocation, collapse / re-optimize loops)  </li>
-<li>- Quattro memory pools (BlackHole · MeshBrain · MultiNova · BaseForce)  </li>
-<li>- Fate Organizer — intelligent file organization demos (“Hub in reverse”)  </li>
-<li>- Desktop environment sketches (files, terminal, notepad, browser shells)</li>
-</ul>
-<p>See monorepo: <code>val-os-v5/</code> (and archived <code>val-os*</code> trees). Treat as <strong>research OS demos</strong>, not a shipping consumer OS commitment on this site.</p>
-<h2 id="link">Link to Valhalla</h2>
-<div class="callout">
-  <strong>Shared lineage, different job.</strong>
-<p>  Fate / Quattro ideas appear across Wave, Val-OS, and Valhalla’s structural runtime.   For agent reliability buyers and most investors, evaluate</p>
-  <a href="/valhalla/">Valhalla</a> first.
-<p>  Wave pages exist for scientific completeness and stack transparency.</p>
-</div>
-<h2>Honest bounds</h2>
-<ul>
-<li>- Experimental; APIs and demos evolve  </li>
-<li>- Not marketed here as a production general-purpose OS replacement  </li>
-<li>- Not a substitute Unique Proof for Valhalla U1–U5  </li>
-</ul>
-<div class="cta-row">
-  <a class="btn solid" href="/valhalla/">Primary: Valhalla</a>
-  <a class="btn" href="/cryptography/">Cryptography</a>
-  <a class="btn" href="/about/">About</a>
-</div>
-      </article>
-    </main>
+unified {
+    i: 0.8
+    e: 0.2
+    r: 0.9
+}
 
-    <footer class="site-footer">
-  <div class="wrap footer-inner">
+result = add(10, 20)
+out "Hello, Wave!\n"
+syscall.exit(0)</code></pre>
+        <p>A local tree, Val-OS v5, is an operating-system experiment written in Wave: boot, kernel, and drivers as <code>.wave</code> sources. It is not a fifth research line, and it is not described here as a shipped operating system. An older local snapshot, Wave v4.3, talks about self-hosting and a hybrid interface. The public definition used on this page is the rule-translation README, not that snapshot.</p>
+      </section>
+      <section id="limits">
+        <h2>Limits</h2>
+        <div class="note">
+          <p>Alpha means the compilers exist and the READMEs show a language surface. It does not mean a stable specification, a conformance suite published with results, or a general-purpose systems language ready to replace C. License headers on the public repositories still say “Rogue Intelligence LNC.” The license named is MIT, copyright 2026 Jouly Mars (ZHUOLI MA).</p>
+        </div>
+      </section>
+      <section id="docs">
+        <h2>Collaboration</h2>
+        <p>Useful work is a conformance check of the three compilers against one program, or a measured GPU run from the published harness. <a href="/contact/">Contact</a>.</p>
+        <h3>Sources read for this page</h3>
+        <ul class="sources">
+          <li>Public READMEs: Wave, wave-c, wave-asm, wave-bin.</li>
+          <li>Local <code>wave-v4-backup/README.md</code> and <code>val-os/README.md</code> only to mark them as earlier or local trees.</li>
+        </ul>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="colophon">
+  <div class="frame colophon-inner">
     <div>
-      <strong>Rogue Intelligence</strong><br>
-      Self-funded independent R&D · Primary line: Valhalla
+      <strong>Rogue Intelligence Inc.</strong><br>
+      Independent research in intelligence, mathematics, cryptography, and computing systems.
     </div>
-    <div class="footer-links">
-      <a href="/about/">Author · financing · gifts</a>
-      <a href="mailto:licensing@rogue-intelligence.com">licensing@rogue-intelligence.com</a>
-    </div>
-    <div class="footer-note">
-      © 2026 Rogue Intelligence. Scientific / technical materials. Not investment advice.
-    </div>
+    <nav aria-label="Footer">
+      <a href="/projects/">Projects</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="/research/">Research</a>
+      <a href="https://rogue-intelligence-inc.github.io/valhalla-unified-core/">Valhalla technical mirror</a>
+    </nav>
+    <nav aria-label="Repositories">
+      <a href="https://github.com/Rogue-Intelligence-INC/Valhalla">Valhalla</a>
+      <a href="https://github.com/Rogue-Intelligence-INC/Wave">Wave</a>
+      <a href="https://github.com/Rogue-Intelligence-INC/val-crypt">Val-Crypt</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <p class="fine">© 2026 Rogue Intelligence Inc. Laboratory records and technical notes. Internal tests are labeled as such. This site is not a certification, a peer-reviewed journal, or an offer of securities.</p>
   </div>
 </footer>
-
-  </body>
+<script src="/assets/js/site.js"></script>
+</body>
 </html>
