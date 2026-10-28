@@ -11,11 +11,11 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rogue-intelligence-inc.github.io/s-wind/">
   
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon.svg?v=20261029a" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/site.css?v=20261029a">
 <script>
 try {
   var t = localStorage.getItem("ri-theme");
@@ -73,7 +73,7 @@ try {
         </p>
         <p>The same note gives the counterexample that makes the bound concrete. Eight points and a degree-7 polynomial give DoF = 8 − 8 = 0. The fit exists by the interpolation theorem. S-WIND must label it as interpolation, not as a law. The manuscript’s academic sentence is: fitting, including exact rational interpolation, is an auditable hypothesis generator. It is upgraded only after a pre-registered out-of-sample check inside a constrained pattern class.</p>
         <figure class="figure figure-wide">
-          <img src="/assets/figures/swind-levels.svg" alt="Four fit levels: InterpolantFit when degrees of freedom are zero, DescriptiveModel when the outward check fails, PredictiveFit when the check passes but freedom stays below 2, EmergentLaw when freedom is at least 2." width="748" height="280">
+          <img src="/assets/figures/swind-levels.svg?v=20261029a" alt="Four fit levels: InterpolantFit when degrees of freedom are zero, DescriptiveModel when the outward check fails, PredictiveFit when the check passes but freedom stays below 2, EmergentLaw when freedom is at least 2." width="748" height="280">
           <figcaption>Fit levels from the 24 January 2026 engineering report. Only the last row can be called a candidate discovery.</figcaption>
         </figure>
         <p>v1.1.1 records a specific correction. Earlier versions treated out-of-sample verification as true without checking. The manuscript says 1.1.1 checks that an extended signal still satisfies the pattern, for example that a finite difference Δ<sup>d</sup> stays constant.</p>
@@ -89,7 +89,7 @@ try {
           <li class="step"><span class="n">05</span><div><strong>Test outward, and stop at one failure</strong><p>Predict the next point. Consistency increases a success count. One failure returns the pattern to a descriptive model. The paper’s threshold sketch is <code>min_points = pattern_degree + 2</code>, with a computational cap of 20 points.</p></div></li>
         </ol>
         <figure class="figure figure-wide">
-          <img src="/assets/figures/swind-cycle.svg" alt="Calculation cycle: signal, knowledge-base match, pattern class, degrees of freedom, then a prediction of the next point. A short signal loops. One failure stops at a descriptive model." width="760" height="460">
+          <img src="/assets/figures/swind-cycle.svg?v=20261029a" alt="Calculation cycle: signal, knowledge-base match, pattern class, degrees of freedom, then a prediction of the next point. A short signal loops. One failure stops at a descriptive model." width="760" height="460">
           <figcaption>The calculation cycle in the 24 January 2026 engineering report, drawn to the same steps as the manuscript. It is not an added state machine.</figcaption>
         </figure>
         <p>Labels in the manuscript include Known, TrivialInterpolation, DescriptiveOnly, CandidateLaw, StrongCandidate, GenuineDiscovery, and Unknown. GenuineDiscovery additionally asks for external validation. The fit levels run from trivial interpolant, to descriptive model, to constrained candidate, to emergent law.</p>
@@ -103,7 +103,7 @@ try {
         <h2>What the manuscript reports</h2>
         <p>The abstract summarizes 22 experiments: 14 known sequences labeled recognized, 5 novel patterns labeled EmergentLaw with DoF at least 2, and 3 chaotic sequences rejected as InterpolantFit with DoF 0. This page has not re-run them. The full TeX is not posted here.</p>
         <figure class="figure figure-wide">
-          <img src="/assets/figures/swind-results.svg" alt="Bar chart of the manuscript abstract: 14 recognized, 5 emergent laws, 3 interpolant fits." width="680" height="300">
+          <img src="/assets/figures/swind-results.svg?v=20261029a" alt="Bar chart of the manuscript abstract: 14 recognized, 5 emergent laws, 3 interpolant fits." width="680" height="300">
           <figcaption>The abstract’s three counts. They add to 22. This site did not re-run the experiments.</figcaption>
         </figure>
         <p>Two documents disagree on the size of the knowledge base. The manuscript says 78 theorems, 60 physical laws, and 203+ OEIS sequences. The 24 January 2026 engineering report draws a knowledge base of 199 sequences and a knowledge module of about 4,466 lines. Both figures are left as written. They are not averaged.</p>
@@ -149,6 +149,6 @@ try {
     <p class="fine">© 2026 Rogue Intelligence Inc. Laboratory records and technical notes. Internal tests are labeled as such. This site is not a certification, a peer-reviewed journal, or an offer of securities.</p>
   </div>
 </footer>
-<script src="/assets/js/site.js"></script>
+<script src="/assets/js/site.js?v=20261029a"></script>
 </body>
 </html>
