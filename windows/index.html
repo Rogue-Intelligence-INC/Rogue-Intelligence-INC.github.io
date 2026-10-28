@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Windows shell · a small LLM enhancement · Rogue Intelligence Inc.</title>
+  <meta name="description" content="A currently usable Windows sub-project that enhances an attached instruction model. Valhalla remains the main research program.">
+  <link rel="canonical" href="https://rogue-intelligence-inc.github.io/windows/">
+  <meta property="og:title" content="Windows shell · a small LLM enhancement · Rogue Intelligence Inc.">
+  <meta property="og:description" content="A currently usable Windows sub-project that enhances an attached instruction model. Valhalla remains the main research program.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rogue-intelligence-inc.github.io/windows/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>
+try {
+  var t = localStorage.getItem("ri-theme");
+  if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  else if (matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.setAttribute("data-theme", "dark");
+} catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="frame mast-inner">
+    <a class="mark" href="/">
+      <span class="mark-name">Rogue Intelligence</span>
+      <span class="mark-sub">Research &amp; Computing</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+    <nav id="site-nav" class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/projects/">Projects</a><a href="/research/">Research</a><a href="/evidence/">Evidence</a><a href="/about/">About</a><a href="/contact/">Contact</a>
+    </nav>
+    <button class="theme" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+  </div>
+</header>
+
+<main id="main">
+  <header class="page-head">
+    <div class="frame">
+      <p class="eyebrow">Sub-project · Windows · 28 October 2026</p>
+      <h1>A small shell that enhances an existing model.</h1>
+      <p class="deck">This is a currently usable Windows program. It attaches an instruction-tuned language model and adds a knowledge library, a conversation list, screen reading, and computer control that stays off until it is switched on. The main project is <a href="/valhalla/">Valhalla</a>.</p>
+      <p class="small"><span class="tag">Usable desktop shell</span><span class="tag">LLM enhancement</span><span class="tag">Proprietary</span></p>
+    </div>
+  </header>
+  <div class="frame dossier">
+    <nav class="toc" aria-label="On this page">
+      <a href="#place">Place in the laboratory</a>
+      <a href="#does">What it does today</a>
+      <a href="#runtime">What it calls</a>
+      <a href="#bounds">Bounds</a>
+    </nav>
+    <article class="prose">
+      <section id="place">
+        <h2>Place in the laboratory</h2>
+        <p>Valhalla is the research program: it incubates a structure-trainable body from an empty session. This page is a sub-project. The shell does not implement that cultivation. It takes a model that already exists, today a Qwen2.5 Instruct checkpoint, and gives it a Windows workplace.</p>
+      </section>
+      <section id="does">
+        <h2>What it does today</h2>
+        <ol class="steps">
+          <li class="step"><span class="n">01</span><div><strong>Chat</strong><p>A conversation list sits on the left. New chat adds a thread. Right-click deletes one. The executable is <code>Valhalla.exe</code>.</p></div></li>
+          <li class="step"><span class="n">02</span><div><strong>Knowledge</strong><p>Handwritten notes stay one fact per line. An import entry takes industry files in txt, md, csv, tsv, json, jsonl, html, xml, rtf, log, docx, xlsx, pptx, and pdf. Imported text is marked pending review. A question retrieves matching passages.</p></div></li>
+          <li class="step"><span class="n">03</span><div><strong>Screen</strong><p>Recognize steps the window aside, captures the desktop behind it, reads the image with Windows OCR, and lists UI Automation controls with screen coordinates.</p></div></li>
+          <li class="step"><span class="n">04</span><div><strong>Control</strong><p>Computer control is off until the switch is on. Allowed actions are read screen, click, click by recognized text, move, type, key, and scroll.</p></div></li>
+          <li class="step"><span class="n">05</span><div><strong>Model and strategy</strong><p>The model panel lists Qwen2.5 Instruct sizes. Strategies in the interface are faithful retrieval, hybrid multiple choice, follow-up session, and multi-hop.</p></div></li>
+        </ol>
+        <figure class="figure figure-wide">
+          <img src="/assets/figures/windows-shell.svg" alt="Schematic: an already trained model feeds chats, a knowledge import, screen reading, and a control switch that stays off." width="760" height="240">
+          <figcaption>Modules in the current shell. Control is drawn dashed because it stays off until it is switched on.</figcaption>
+        </figure>
+      </section>
+      <section id="runtime">
+        <h2>What it calls</h2>
+        <p>Turns go to <code>valhalla_base.exe</code> when that runtime is installed beside the shell. The runtime is the Valhalla research checkout. It is not shipped in the Windows repository. Model weights are read from the machine’s model directory. They are not in the repository either.</p>
+        <p>Repository: <a href="https://github.com/Rogue-Intelligence-INC/valhalla-windows">valhalla-windows</a>.</p>
+      </section>
+      <section id="bounds">
+        <h2>Bounds</h2>
+        <div class="note">
+          <p>This shell enhances an attached model. It does not start an intelligence from an empty session. That claim belongs on the <a href="/valhalla/">Valhalla</a> page, and it has the limits written there.</p>
+          <p>No interface screenshot is published here. Figures inside the desktop build are not copied onto this site.</p>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="colophon">
+  <div class="frame colophon-inner">
+    <div>
+      <strong>Rogue Intelligence Inc.</strong><br>
+      Independent research in intelligence, mathematics, cryptography, and computing systems.
+    </div>
+    <nav aria-label="Footer">
+      <a href="/projects/">Projects</a>
+      <a href="/valhalla/">Valhalla</a>
+      <a href="/evidence/">Evidence</a>
+      <a href="https://rogue-intelligence-inc.github.io/valhalla-unified-core/">Valhalla technical mirror</a>
+    </nav>
+    <nav aria-label="Repositories">
+      <a href="https://github.com/Rogue-Intelligence-INC/valhalla-windows">Windows shell</a>
+      <a href="https://github.com/Rogue-Intelligence-INC/Valhalla">Valhalla</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <p class="fine">© 2026 Rogue Intelligence Inc. Laboratory records and technical notes. Internal tests are labeled as such. This site is not a certification, a peer-reviewed journal, or an offer of securities.</p>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

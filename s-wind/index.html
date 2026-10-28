@@ -84,6 +84,10 @@ try {
           <li class="step"><span class="n">04</span><div><strong>Extend if the signal is short</strong><p>A self-loop lengthens the signal so that degrees of freedom can rise.</p></div></li>
           <li class="step"><span class="n">05</span><div><strong>Test outward, and stop at one failure</strong><p>Predict the next point. Consistency increases a success count. One failure returns the pattern to a descriptive model. The paper’s threshold sketch is <code>min_points = pattern_degree + 2</code>, with a computational cap of 20 points.</p></div></li>
         </ol>
+        <figure class="figure figure-wide">
+          <img src="/assets/figures/swind-cycle.svg" alt="Calculation cycle: signal, knowledge-base match, pattern class, degrees of freedom, then a prediction of the next point. A short signal loops. One failure stops at a descriptive model." width="760" height="460">
+          <figcaption>The calculation cycle in the 24 January 2026 engineering report, drawn to the same steps as the manuscript. It is not an added state machine.</figcaption>
+        </figure>
         <p>Labels in the manuscript include Known, TrivialInterpolation, DescriptiveOnly, CandidateLaw, StrongCandidate, GenuineDiscovery, and Unknown. GenuineDiscovery additionally asks for external validation. The fit levels run from trivial interpolant, to descriptive model, to constrained candidate, to emergent law.</p>
       </section>
       <section id="epr">
@@ -94,6 +98,10 @@ try {
       <section id="experiments">
         <h2>What the manuscript reports</h2>
         <p>The abstract summarizes 22 experiments: 14 known sequences labeled recognized, 5 novel patterns labeled EmergentLaw with DoF at least 2, and 3 chaotic sequences rejected as InterpolantFit with DoF 0. This page has not re-run them. The full TeX is not posted here.</p>
+        <figure class="figure figure-wide">
+          <img src="/assets/figures/swind-results.svg" alt="Bar chart of the manuscript abstract: 14 recognized, 5 emergent laws, 3 interpolant fits." width="680" height="300">
+          <figcaption>The abstract’s three counts. They add to 22. This site did not re-run the experiments.</figcaption>
+        </figure>
         <p>Two documents disagree on the size of the knowledge base. The manuscript says 78 theorems, 60 physical laws, and 203+ OEIS sequences. The 24 January 2026 engineering report draws a knowledge base of 199 sequences and a knowledge module of about 4,466 lines. Both figures are left as written. They are not averaged.</p>
       </section>
       <section id="limits">

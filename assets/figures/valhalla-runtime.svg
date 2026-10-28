@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" role="img" aria-labelledby="t d">
+  <title id="t">Valhalla runtime stack</title>
+  <desc id="d">Ingress, Fate quad cycle, Hub Tile Stem, then native readout or an optional language-model head.</desc>
+  <rect width="880" height="520" fill="#f4faf8"/>
+  <text x="28" y="36" font-family="Georgia, serif" font-size="20" fill="#0e2c33">Runtime stack</text>
+  <text x="28" y="56" font-family="IBM Plex Mono, Consolas, monospace" font-size="11" fill="#3d5c63">14 July 2026 architecture figure, redrawn</text>
+  <g font-family="IBM Plex Mono, Consolas, monospace" font-size="11" fill="#6a8a90">
+    <text x="16" y="118" transform="rotate(-90 16 118)">INGRESS</text>
+    <text x="16" y="230" transform="rotate(-90 16 230)">FATE</text>
+    <text x="16" y="350" transform="rotate(-90 16 350)">BODY</text>
+    <text x="16" y="460" transform="rotate(-90 16 460)">READ</text>
+  </g>
+  <rect x="40" y="78" width="620" height="64" fill="#ffffff" stroke="#145a78" stroke-width="1.4"/>
+  <text x="56" y="102" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0e2c33">One session</text>
+  <text x="56" y="122" font-family="Inter, sans-serif" font-size="12" fill="#3d5c63">Text · speech features · image features · appended material</text>
+  <line x1="350" y1="142" x2="350" y2="164" stroke="#0c6e66" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="40" y="166" width="620" height="88" fill="#145a78"/>
+  <text x="56" y="190" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f4faf8">Fate · quad_cycle</text>
+  <g font-family="IBM Plex Mono, Consolas, monospace" font-size="11" fill="#f4faf8">
+    <rect x="56" y="204" width="140" height="28" fill="#0e2c33"/>
+    <text x="126" y="222" text-anchor="middle">BlackHole</text>
+    <rect x="206" y="204" width="140" height="28" fill="#0e2c33"/>
+    <text x="276" y="222" text-anchor="middle">MeshBrain</text>
+    <rect x="356" y="204" width="140" height="28" fill="#0e2c33"/>
+    <text x="426" y="222" text-anchor="middle">MultiNova</text>
+    <rect x="506" y="204" width="140" height="28" fill="#0e2c33"/>
+    <text x="576" y="222" text-anchor="middle">BaseForce</text>
+  </g>
+  <line x1="350" y1="254" x2="350" y2="276" stroke="#0c6e66" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="40" y="278" width="620" height="110" fill="#ffffff" stroke="#0d7a68" stroke-width="1.4"/>
+  <text x="56" y="302" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#0e2c33">Triad body</text>
+  <g font-family="Inter, sans-serif" font-size="12" fill="#0e2c33">
+    <rect x="56" y="316" width="186" height="54" fill="#e7f4f1" stroke="#0d7a68"/>
+    <text x="149" y="338" text-anchor="middle" font-weight="600">Hub</text>
+    <text x="149" y="356" text-anchor="middle" fill="#3d5c63">route</text>
+    <rect x="256" y="316" width="186" height="54" fill="#e7f4f1" stroke="#0d7a68"/>
+    <text x="349" y="338" text-anchor="middle" font-weight="600">Tile</text>
+    <text x="349" y="356" text-anchor="middle" fill="#3d5c63">local pattern</text>
+    <rect x="456" y="316" width="186" height="54" fill="#e7f4f1" stroke="#0d7a68"/>
+    <text x="549" y="338" text-anchor="middle" font-weight="600">Stem</text>
+    <text x="549" y="356" text-anchor="middle" fill="#3d5c63">cluster</text>
+  </g>
+  <line x1="350" y1="388" x2="350" y2="410" stroke="#0c6e66" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="40" y="412" width="300" height="72" fill="#ffffff" stroke="#0e2c33" stroke-dasharray="5 3"/>
+  <text x="56" y="440" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0e2c33">Optional model head</text>
+  <text x="56" y="460" font-family="Inter, sans-serif" font-size="12" fill="#3d5c63">Decodes later. Default note: Qwen2.5-0.5B.</text>
+  <rect x="356" y="412" width="304" height="72" fill="#0d7a68"/>
+  <text x="372" y="440" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#f4faf8">Native readout</text>
+  <text x="372" y="460" font-family="Inter, sans-serif" font-size="12" fill="#d7efe8">Open questions read the structure. The gate can abstain.</text>
+  <rect x="684" y="78" width="172" height="406" fill="#ffffff" stroke="#1a6a7a"/>
+  <text x="700" y="104" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#0e2c33">Internal suite</text>
+  <text x="700" y="140" font-family="IBM Plex Mono, Consolas, monospace" font-size="12" fill="#145a78">U1</text>
+  <text x="700" y="158" font-family="Inter, sans-serif" font-size="12" fill="#3d5c63">Shared session</text>
+  <text x="700" y="196" font-family="IBM Plex Mono, Consolas, monospace" font-size="12" fill="#145a78">U2</text>
+  <text x="700" y="214" font-family="Inter, sans-serif" font-size="12" fill="#3d5c63">Emit or abstain</text>
+  <text x="700" y="252" font-family="IBM Plex Mono, Consolas, monospace" font-size="12" fill="#145a78">U3</text>
+  <text x="700" y="270" font-family="Inter, sans-serif" font-size="12" fill="#3d5c63">Pollution rescue</text>
+  <text x="700" y="308" font-family="IBM Plex Mono, Consolas, monospace" font-size="12" fill="#145a78">U4</text>
+  <text x="700" y="326" font-family="Inter, sans-serif" font-size="12" fill="#3d5c63">Backbone change</text>
+  <text x="700" y="420" font-family="Inter, sans-serif" font-size="11" fill="#6a8a90">Fast scorecard, internal. Not a general proof.</text>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0c6e66"/>
+    </marker>
+  </defs>
+</svg>

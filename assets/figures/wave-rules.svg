@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-labelledby="t d">
+  <title id="t">Wave rule combination</title>
+  <desc id="d">Field parameters i, e, and r feed eight rules, which lower to machine behavior.</desc>
+  <rect width="760" height="300" fill="#f4faf8"/>
+  <text x="24" y="32" font-family="Georgia, serif" font-size="20" fill="#0e2c33">From a field to behavior</text>
+  <text x="24" y="52" font-family="IBM Plex Mono, Consolas, monospace" font-size="11" fill="#3d5c63">Public Wave README</text>
+  <rect x="24" y="78" width="150" height="150" fill="#145a78"/>
+  <text x="99" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f4faf8">unified</text>
+  <text x="99" y="146" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="13" fill="#d7efe8">i</text>
+  <text x="99" y="166" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="13" fill="#d7efe8">e</text>
+  <text x="99" y="186" text-anchor="middle" font-family="IBM Plex Mono, Consolas, monospace" font-size="13" fill="#d7efe8">r</text>
+  <line x1="174" y1="153" x2="204" y2="153" stroke="#0c6e66" stroke-width="1.5" marker-end="url(#a)"/>
+  <g font-family="IBM Plex Mono, Consolas, monospace" font-size="11" fill="#0e2c33">
+    <rect x="206" y="78" width="150" height="28" fill="#ffffff" stroke="#0d7a68"/><text x="214" y="97">gravitational · i</text>
+    <rect x="364" y="78" width="150" height="28" fill="#ffffff" stroke="#0d7a68"/><text x="372" y="97">memory · i</text>
+    <rect x="206" y="114" width="150" height="28" fill="#ffffff" stroke="#145a78"/><text x="214" y="133">entropy · e</text>
+    <rect x="364" y="114" width="150" height="28" fill="#ffffff" stroke="#145a78"/><text x="372" y="133">evolution · e</text>
+    <rect x="206" y="150" width="150" height="28" fill="#ffffff" stroke="#1a6a7a"/><text x="214" y="169">tension · r</text>
+    <rect x="364" y="150" width="150" height="28" fill="#ffffff" stroke="#1a6a7a"/><text x="372" y="169">connection · r</text>
+    <rect x="206" y="186" width="150" height="28" fill="#ffffff" stroke="#0e6b56"/><text x="214" y="205">orbital · r+e</text>
+    <rect x="364" y="186" width="150" height="28" fill="#ffffff" stroke="#0e6b56"/><text x="372" y="205">boundary · 1e</text>
+  </g>
+  <line x1="514" y1="153" x2="544" y2="153" stroke="#0c6e66" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="546" y="78" width="190" height="150" fill="#0d7a68"/>
+  <text x="562" y="108" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#f4faf8">Lowering</text>
+  <text x="562" y="136" font-family="IBM Plex Mono, Consolas, monospace" font-size="12" fill="#d7efe8">mov · add</text>
+  <text x="562" y="156" font-family="IBM Plex Mono, Consolas, monospace" font-size="12" fill="#d7efe8">call · loop</text>
+  <text x="562" y="184" font-family="Inter, sans-serif" font-size="12" fill="#f4faf8">x86-64, syscall,</text>
+  <text x="562" y="202" font-family="Inter, sans-serif" font-size="12" fill="#f4faf8">or an OpenCL map</text>
+  <text x="24" y="268" font-family="Inter, sans-serif" font-size="12" fill="#3d5c63">mov = gravitational + connection. add = entropy + gravitational. call = connection + boundary. loop = orbital + tension.</text>
+  <text x="24" y="288" font-family="Inter, sans-serif" font-size="12" fill="#6a8a90">The README describes a timing harness and does not print the timings.</text>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0c6e66"/></marker>
+  </defs>
+</svg>
