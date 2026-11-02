@@ -44,8 +44,8 @@ try {
     <div class="frame">
       <p class="eyebrow">01 / Main project · Rules-first structural intelligence</p>
       <h1>Valhalla</h1>
-      <p class="deck">Valhalla’s goal is a <strong>rules-first, self-forming neural network</strong>: a persistent body that grows its own Tile/Stem structure under explicit algebraic rules (the Fate criterion), stores every experience in four quad operators with exact accounting, and routes all later computation through the structure it formed. A language model may be attached later as a decoding head; it is not the object of study, and nothing in the measured core depends on one.</p>
-      <p class="small"><span class="tag">Implemented Rust system</span><span class="tag">Re-measured 3 Nov 2026</span><span class="tag">One-click reproduction</span></p>
+      <p class="deck">Valhalla’s goal is a <strong>rules-first, self-forming neural network</strong>: a persistent body that grows its own Tile/Stem structure under explicit algebraic rules (the Fate criterion), stores every experience in four quad operators with exact accounting, and routes all later computation through the structure it formed. A language model may be attached later as a decoding head; it is not the object of study, and nothing in the measured core depends on one. Every governing rule is written down in the source, and the whole state can be watched from outside, frozen, and restored bit-exactly.</p>
+      <p class="small"><span class="tag">Implemented Rust system</span><span class="tag">White-box by design</span><span class="tag">Re-measured 3 Nov 2026</span><span class="tag">One-click reproduction</span></p>
     </div>
   </header>
   <div class="frame dossier">
@@ -144,6 +144,16 @@ try {
         </ol>
       </section>
 
+      
+        <h3>White-box by design</h3>
+        <p>Valhalla is not a black box with an explanation layer attached; the mechanism itself is the readable object. Five properties, all verifiable in the public code and logs:</p>
+        <ol class="steps">
+          <li class="step"><span class="n">W1</span><div><strong>Written rules</strong><p>The governing criteria are explicit in the source: the Fate cluster equation, the split gate (energy &gt; 1.5x mean, at most 10 per cycle), bundling under the equation's convergence rule, the quad escape law. Nothing that governs the measured core is a learned opaque weight.</p></div></li>
+          <li class="step"><span class="n">W2</span><div><strong>Self-reporting criterion</strong><p>The Fate equation prints itself at every checkpoint of every run (live 50-round end-state: 0.7155x2 - 1.8912x + 0.6700). You can read what judged your data, in the log, next to the result.</p></div></li>
+          <li class="step"><span class="n">W3</span><div><strong>External read-only monitor</strong><p><code>BodyMonitor</code> (hub-f64 <code>monitor.rs</code>) sits outside the body and only watches: populations, connections, per-store ledgers with hashes and deltas, Fate tick and equation. The observer cannot write into the observed.</p></div></li>
+          <li class="step"><span class="n">W4</span><div><strong>Auditable accounting</strong><p>Every fragment is stored eight times by design (four quad operators x Tile/Stem), each store reporting entries / bytes / fingerprint hash per cycle. Storage claims check to the byte.</p></div></li>
+          <li class="step"><span class="n">W5</span><div><strong>Transportable state</strong><p>The full body (structure + quad storage + Fate) freezes, moves, and thaws with bit-identical scores (F = C), deterministically, across seeds on the reference setup.</p></div></li>
+        </ol>
       <section id="experiments">
         <h2>Experiments</h2>
         <h3>Incubation causal proof — does structure carry the answer?</h3>
@@ -204,7 +214,7 @@ cd Valhalla
 .\reproduce\reproduce.ps1            # full suite, ~8–12 min incl. build
 .\reproduce\reproduce.ps1 -Quick     # smoke: lib tests + check + battery
 bash reproduce/reproduce.sh          # Linux/macOS, best effort</code></pre>
-        <p>Prerequisites: Rust stable; NVIDIA CUDA toolchain (the f64 line builds with <code>native_cuda</code>). Deterministic on the reference machine — same seeds, same material, bit-exact body fingerprints. Investor deck: <a href="https://github.com/Rogue-Intelligence-INC/valhalla-incubation-evidence/blob/main/deck/Valhalla_Investor_Deck_EN_v1.6_20261103.pptx">Valhalla Investor Deck v1.6</a> (YC narrative order: problem → solution → system → measured results → ask).</p>
+        <p>Prerequisites: Rust stable; NVIDIA CUDA toolchain (the f64 line builds with <code>native_cuda</code>). Deterministic on the reference machine — same seeds, same material, bit-exact body fingerprints. Investor deck: <a href="https://github.com/Rogue-Intelligence-INC/valhalla-incubation-evidence/blob/main/deck/Valhalla_Investor_Deck_EN_v1.7_20261103.pptx">Valhalla Investor Deck v1.7</a> (YC narrative order: problem → solution → system → measured results → ask).</p>
       </section>
 
       <section id="programme">
